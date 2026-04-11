@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automobile</title>
+    <link rel="icon" href="./assets/bg remove.webp">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./root.css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="main-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="./assets/light yellow.webp" alt="logo" width="150px">
+            </a>
+
+            <nav class="nav-links" id="navLinks">
+                <button class="close-menu" id="closeMenu" aria-label="Close Menu">&times;</button>
+
+                <a href="index.html" class="nav-item">Home</a>
+                <a href="service.html" class="nav-item">Service</a>
+                <a href="gift.html" class="nav-item">Gift Cards</a>
+                <a href="contact.html" class="nav-item">Contact</a>
+                <a href="auth.html" class="btn btn-primary">Sign Up</a>
+            </nav>
+
+            <button class="hamburger" id="hamburger" aria-label="Open Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+
+
+    <main>
+
+        <section class="hero">
+            <div class="hero-bg"></div>
+
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <span class="hero-badge">Next-Gen Performance</span>
+                    <h1 class="hero-title">ENGINEERED FOR <br><span class="text-glow">PRECISION</span></h1>
+                    <p class="hero-subtitle">
+                        Experience the intersection of luxury and raw power. Our curated collection defines the future
+                        of the open road.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#inventory" class="btn btn-primary">Explore Inventory</a>
+                        <a href="#video" class="btn btn-secondary">Watch Review</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+        <section class="features">
+            <div class="container">
+                <div class="section-header">
+                    <span class="sub-title">Our Expertise</span>
+                    <h2 class="main-title">DRIVING THE <span class="text-glow">FUTURE</span></h2>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="card-icon">01</div>
+                        <h3 class="card-title">Performance Tuning</h3>
+                        <p class="card-text">Unlock your engine's true potential with our custom ECU remapping and
+                            hardware upgrades.</p>
+                        <a href="#" class="card-link">Learn More &rarr;</a>
+                    </div>
+
+                    <div class="feature-card active">
+                        <div class="card-icon">02</div>
+                        <h3 class="card-title">Luxury Sales</h3>
+                        <p class="card-text">A curated selection of the world's most prestigious automotive
+                            masterpieces.</p>
+                        <a href="#" class="card-link">View Gallery &rarr;</a>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="card-icon">03</div>
+                        <h3 class="card-title">Expert Servicing</h3>
+                        <p class="card-text">Precision maintenance using genuine parts and certified master technicians.
+                        </p>
+                        <a href="#" class="card-link">Book Appointment &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+        <section class="showcase">
+            <div class="container showcase-container">
+                <div class="showcase-visual">
+                    <div class="showcase-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&q=80&w=1200"
+                            alt="Supercar" class="showcase-img">
+                    </div>
+                    <div class="visual-tag">Special Edition</div>
+                </div>
+
+                <div class="showcase-content">
+                    <span class="sub-title">Performance Spotlight</span>
+                    <h2 class="main-title">THE NEW <span class="text-glow">APEX GT</span></h2>
+                    <p class="showcase-description">
+                        Engineered for those who refuse to compromise. The Apex GT combines raw aerodynamic efficiency
+                        with a twin-turbo powertrain.
+                    </p>
+
+                    <div class="specs-grid">
+                        <div class="spec-item">
+                            <span class="spec-label">Top Speed</span>
+                            <span class="spec-value">325 KM/H</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">0-100 KM/H</span>
+                            <span class="spec-value">2.8 SEC</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Engine</span>
+                            <span class="spec-value">V8 TWIN</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Power</span>
+                            <span class="spec-value">720 HP</span>
+                        </div>
+                    </div>
+
+                    <div class="showcase-footer">
+                        <a href="#" class="btn btn-primary">Download Specs</a>
+                        <a href="#" class="btn btn-secondary">Customize</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+        <section class="gallery-showcase">
+            <div class="container gallery-container">
+
+                <div class="section-header">
+                    <span class="sub-title">The Collection</span>
+                    <h2 class="main-title">AESTHETIC <span class="text-glow">PRECISION</span></h2>
+                    <p class="section-description">Every curve, every stitch, engineered to perfection. View our latest
+                        arrivals in stunning detail.</p>
+                </div>
+
+                <div class="gallery-grid">
+
+                    <div class="gallery-item feature-item">
+                        <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=1200&auto=format&fit=crop"
+                            alt="Sports Car Profile" class="gallery-img">
+                        <div class="image-overlay">
+                            <span class="img-category">Performance</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1603386329225-868f9b1ee6c9?q=80&w=600&auto=format&fit=crop"
+                            alt="Engine Detail" class="gallery-img">
+                        <div class="image-overlay">
+                            <span class="img-category">Powertrain</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c340?q=80&w=600&auto=format&fit=crop"
+                            alt="Interior Luxury" class="gallery-img">
+                        <div class="image-overlay">
+                            <span class="img-category">Interior</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?q=80&w=600&auto=format&fit=crop"
+                            alt="Wheel Detail" class="gallery-img">
+                        <div class="image-overlay">
+                            <span class="img-category">Design</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=600&auto=format&fit=crop"
+                            alt="Classic Car Front" class="gallery-img">
+                        <div class="image-overlay">
+                            <span class="img-category">Classic</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+        <section class="tech-specs">
+            <div class="container">
+                <div class="tech-row">
+                    <div class="tech-image">
+                        <img src="https://images.unsplash.com/photo-1486497395442-885f2048ea08?q=80&w=1200&auto=format&fit=crop"
+                            alt="Engine Detail">
+                    </div>
+                    <div class="tech-card">
+                        <span class="spec-number">01</span>
+                        <h3 class="card-title">AERODYNAMIC <span class="text-glow">SOUL</span></h3>
+                        <p class="card-text">Every vent and wing is sculpted to manage airflow, reducing drag while
+                            increasing downforce at high speeds.</p>
+                        <ul class="spec-list">
+                            <li><i class="accent-dot"></i> Active Rear Spoiler</li>
+                            <li><i class="accent-dot"></i> Carbon Fiber Diffuser</li>
+                            <li><i class="accent-dot"></i> Drag Coeff: 0.23cd</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tech-row reverse">
+                    <div class="tech-image">
+                        <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=1200&auto=format&fit=crop"
+                            alt="Interior Tech">
+                    </div>
+                    <div class="tech-card">
+                        <span class="spec-number">02</span>
+                        <h3 class="card-title">SMART <span class="text-glow">COCKPIT</span></h3>
+                        <p class="card-text">Interface with your vehicle through a 15-inch curved OLED display and
+                            haptic feedback controls.</p>
+                        <ul class="spec-list">
+                            <li><i class="accent-dot"></i> 5G Connectivity</li>
+                            <li><i class="accent-dot"></i> AI Voice Assistant</li>
+                            <li><i class="accent-dot"></i> Biometric Ignition</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+        <section class="inventory">
+            <div class="container">
+                <div class="section-header">
+                    <span class="sub-title">Live Inventory</span>
+                    <h2 class="main-title">SELECT YOUR <span class="text-glow">SERIES</span></h2>
+                </div>
+
+                <div class="inventory-track">
+                    <div class="inventory-card">
+                        <div class="card-badge">New Arrival</div>
+                        <div class="card-img-box">
+                            <img src="https://images.unsplash.com/photo-1555353540-64580b51c258?q=80&w=600&auto=format&fit=crop"
+                                alt="Stealth Series">
+                        </div>
+                        <div class="card-info">
+                            <h3>STEALTH SERIES</h3>
+                            <p>Starting at $89,000</p>
+                            <a href="#" class="btn-text">Explore Specs &rarr;</a>
+                        </div>
+                    </div>
+
+                    <div class="inventory-card">
+                        <div class="card-img-box">
+                            <img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?q=80&w=600&auto=format&fit=crop"
+                                alt="Track Series">
+                        </div>
+                        <div class="card-info">
+                            <h3>TRACK SERIES</h3>
+                            <p>Starting at $125,000</p>
+                            <a href="#" class="btn-text">Explore Specs &rarr;</a>
+                        </div>
+                    </div>
+
+                    <div class="inventory-card">
+                        <div class="card-img-box">
+                            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=600&auto=format&fit=crop"
+                                alt="Luxury Series">
+                        </div>
+                        <div class="card-info">
+                            <h3>LUXURY SERIES</h3>
+                            <p>Starting at $150,000</p>
+                            <a href="#" class="btn-text">Explore Specs &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+        <section class="stats-parallax">
+            <div class="parallax-overlay">
+                <div class="container stats-container">
+
+                    <div class="stats-content">
+                        <span class="sub-title">Performance Metrics</span>
+                        <h2 class="main-title">BUILT FOR <span class="text-glow">SPEED</span></h2>
+                        <p class="section-description">
+                            Our engineering limits are pushed every day. From track-day performance to urban efficiency,
+                            we deliver nothing but excellence.
+                        </p>
+
+                        <div class="skill-bars">
+                            <div class="bar-item">
+                                <div class="bar-info"><span>Engine Output</span><span>95%</span></div>
+                                <div class="bar-line"><span class="fill" style="width: 95%;"></span></div>
+                            </div>
+                            <div class="bar-item">
+                                <div class="bar-info"><span>Traction Control</span><span>92%</span></div>
+                                <div class="bar-line"><span class="fill" style="width: 92%;"></span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="stat-box-glass">
+                            <h3 class="stat-number">120<span class="plus">K</span></h3>
+                            <p class="stat-label">Miles Tested</p>
+                        </div>
+                        <div class="stat-box-glass">
+                            <h3 class="stat-number">0.2<span class="plus">s</span></h3>
+                            <p class="stat-label">Shift Speed</p>
+                        </div>
+                        <div class="stat-box-glass">
+                            <h3 class="stat-number">650</h3>
+                            <p class="stat-label">Turbo PSI</p>
+                        </div>
+                        <div class="stat-box-glass">
+                            <h3 class="stat-number">100<span class="plus">%</span></h3>
+                            <p class="stat-label">Pure Adrenaline</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+        <section class="pricing-tiers">
+            <div class="container">
+                <div class="section-header">
+                    <span class="sub-title">Ownership Plans</span>
+                    <h2 class="main-title">CHOOSE YOUR <span class="text-glow">POWER</span></h2>
+                </div>
+
+                <div class="pricing-grid">
+                    <div class="price-card">
+                        <div class="price-header">
+                            <span class="tier-name">Cruiser</span>
+                            <h3 class="price-value">$499<span>/mo</span></h3>
+                        </div>
+                        <ul class="price-features">
+                            <li><i class="accent-dot"></i> Basic Maintenance</li>
+                            <li><i class="accent-dot"></i> 24/7 Roadside Assist</li>
+                            <li><i class="accent-dot"></i> Standard Warranty</li>
+                        </ul>
+                        <a href="#" class="btn btn-secondary">Select Plan</a>
+                    </div>
+
+                    <div class="price-card featured">
+                        <div class="featured-badge">Most Popular</div>
+                        <div class="price-header">
+                            <span class="tier-name">Track-Ready</span>
+                            <h3 class="price-value">$899<span>/mo</span></h3>
+                        </div>
+                        <ul class="price-features">
+                            <li><i class="accent-dot"></i> Performance Tuning</li>
+                            <li><i class="accent-dot"></i> Tire & Wheel Protection</li>
+                            <li><i class="accent-dot"></i> Track Day Access</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary">Select Plan</a>
+                    </div>
+
+                    <div class="price-card">
+                        <div class="price-header">
+                            <span class="tier-name">Elite</span>
+                            <h3 class="price-value">$1,499<span>/mo</span></h3>
+                        </div>
+                        <ul class="price-features">
+                            <li><i class="accent-dot"></i> Concierge Service</li>
+                            <li><i class="accent-dot"></i> Private Storage</li>
+                            <li><i class="accent-dot"></i> Full Customization</li>
+                        </ul>
+                        <a href="#" class="btn btn-secondary">Select Plan</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+        <section class="testimonials">
+            <div class="container">
+                <div class="section-header">
+                    <span class="sub-title">Reviews</span>
+                    <h2 class="main-title">THE DRIVER'S <span class="text-glow">VOICE</span></h2>
+                </div>
+
+                <div class="testimonial-grid">
+                    <div class="review-card">
+                        <div class="quote-icon">“</div>
+                        <p class="review-text">The level of precision in the engine tuning is unlike anything I've
+                            experienced. It's pure raw power combined with elegance.</p>
+                        <div class="reviewer-info">
+                            <img src="https://i.pravatar.cc/150?u=1" alt="Driver" class="reviewer-img">
+                            <div class="reviewer-details">
+                                <span class="reviewer-name">Marcus Sterling</span>
+                                <span class="reviewer-role">Apex GT Owner</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="review-card highlight">
+                        <div class="quote-icon">“</div>
+                        <p class="review-text">Searching for a rare classic was effortless. Their team knows automobiles
+                            better than anyone in the industry.</p>
+                        <div class="reviewer-info">
+                            <img src="https://i.pravatar.cc/150?u=2" alt="Driver" class="reviewer-img">
+                            <div class="reviewer-details">
+                                <span class="reviewer-name">Elena Rodriguez</span>
+                                <span class="reviewer-role">Collector</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="quote-icon">“</div>
+                        <p class="review-text">The smart cockpit interface is a game changer. It feels like the car is
+                            an extension of my own body.</p>
+                        <div class="reviewer-info">
+                            <img src="https://i.pravatar.cc/150?u=3" alt="Driver" class="reviewer-img">
+                            <div class="reviewer-details">
+                                <span class="reviewer-name">James Chen</span>
+                                <span class="reviewer-role">Tech Enthusiast</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+        <section class="faq-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="sub-title">Expert Support</span>
+                    <h2 class="main-title">FREQUENTLY ASKED <span class="text-glow">QUESTIONS</span></h2>
+                </div>
+
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>How long does a custom engine tune take?</span>
+                            <i class="faq-icon">+</i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Depending on the complexity and vehicle model, a precision stage 1 or 2 tune typically
+                                takes 4 to 6 hours, including rigorous dyno testing and safety diagnostics.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Do you offer international shipping for vehicles?</span>
+                            <i class="faq-icon">+</i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, we provide fully insured enclosed transport and global shipping logistics. Our team
+                                handles all customs documentation to ensure your vehicle arrives in showroom condition.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>What is the warranty period on performance parts?</span>
+                            <i class="faq-icon">+</i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>All genuine performance parts installed by our certified technicians come with a 2-year /
+                                24,000-mile limited warranty for peace of mind on the track and the road.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Can I trade in my current vehicle?</span>
+                            <i class="faq-icon">+</i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Absolutely. We offer a "Premier Appraisal" service where our experts evaluate your car's
+                                market value and technical health to offer you the best possible trade-in credit.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+        <section class="final-cta">
+            <div class="cta-mesh"></div>
+            <div class="cta-scanline"></div>
+
+            <div class="container cta-container">
+                <div class="cta-content">
+                    <span class="sub-title">Final Lap</span>
+                    <h2 class="main-title">READY TO <span class="text-glow">REDEFINE</span> YOUR DRIVE?</h2>
+                    <p class="cta-description">
+                        Don't settle for the standard. Join the elite circle of drivers who demand precision engineering
+                        and unparalleled performance.
+                    </p>
+                    <div class="cta-btns">
+                        <a href="#" class="btn btn-primary">Build Your Model</a>
+                        <a href="#" class="btn btn-outline">Schedule Test Drive</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+    </main>
+
+
+
+
+
+
+    <footer class="main-footer">
+        <div class="footer-pattern"></div>
+
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo footer-logo">
+                        <img src="./assets/light yellow.webp" alt="logo" width="150px">
+                    </a>
+                    <p class="footer-about">
+                        Leading the industry in precision engineering and performance luxury. Your journey to excellence
+                        starts here.
+                    </p>
+                    <div class="social-links">
+                        <a href="./error.html" class="social-icon">FB</a>
+                        <a href="./error.html" class="social-icon">IG</a>
+                        <a href="./error.html" class="social-icon">TW</a>
+                        <a href="./error.html" class="social-icon">YT</a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="service.html">Service</a></li>
+                        <li><a href="gift.html">Gift Cards</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="auth.html">Sign Up</a></li>
+
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-title">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="./error.html">Service Center</a></li>
+                        <li><a href="./error.html">Parts Shop</a></li>
+                        <li><a href="./error.html">Warranty</a></li>
+                        <li><a href="./error.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-title">Join The Club</h4>
+                    <p class="footer-text">Subscribe for exclusive early access to new arrivals.</p>
+                    <form class="footer-form" action="./error.html" method="GET">
+                        <input type="email" placeholder="Email Address" class="footer-input" required>
+                        <button type="submit" class="footer-btn">&rarr;</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 AUTOMOTIVE. All Rights Reserved.</p>
+                <div class="footer-legal">
+                    <a href="./error.html">Privacy Policy</a>
+                    <a href="./error.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script src="./script.js"></script>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+        AOS.init({
+            duration: 900,
+            easing: 'ease-in-out',
+            once: true,
+        });
+
+        // data-aos="fade-up"
+        // fade-up, fade-down, fade-left, fade-right, zoom-in,	slide-up, flip-left	
+
+    </script>
+
+</body>
+
+</html>

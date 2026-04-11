@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+    /* --- Brand Palette --- */
+    --primary-color: #F5B900;       /* High-visibility Yellow */
+    --primary-hover: #D4A000;
+    --primary-light: #FFD54F;
+    
+    --secondary-color: #1A1A1A;     /* Asphalt Black */
+    --secondary-hover: #333333;
+
+    /* --- UI Colors --- */
+    --bg-dark: #121212;             /* Deep Matte Black */
+    --bg-surface: #1E1E1E;          /* Component cards */
+    --chrome-silver: #E0E0E0;       /* Metallic silver accents */
+    
+    /* --- Text Colors --- */
+    --text-main: #FFFFFF;           /* Paragraphs */
+    --text-header: #FFFFFF;         /* HEADERS (Added this to fix your CSS) */
+    --text-muted: #A0A0A0;          /* Secondary info */
+    --text-on-primary: #000000;     /* Contrast for yellow buttons */
+    --text-on-secondary: #FFFFFF;
+
+    /* --- Functional --- */
+    --accent-red: #FF3B30;          /* Brake Light Red */
+    --accent-blue: #007AFF;         /* LED Headlight Blue */
+
+    /* --- Typography Scale --- */
+    --fs-h1: 2.5rem;
+    --fs-h2: 2rem;
+    --fs-h3: 1.5rem;
+    --fs-h4: 1.25rem;
+    --fs-h5: 1.125rem;
+    --fs-h6: 1rem;
+    --fs-p: 1rem;
+    --fs-p-sm: 0.875rem;
+
+    --lh-heading: 1.2;
+    --lh-body: 1.6;
+
+    /* --- Global Styles --- */
+    --radius: 8px;                  /* Clean modern rounding */
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Smoother curve */
+    --shadow-industrial: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* --- Global Reset & Body --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-dark); /* Using the deep black for the track */
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    line-height: var(--lh-body);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Typography --- */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-header);
+    font-weight: 700;
+    line-height: var(--lh-heading);
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+}
+
+h1 { font-size: var(--fs-h1); }
+h2 { font-size: var(--fs-h2); }
+h3 { font-size: var(--fs-h3); }
+
+p {
+    font-size: var(--fs-p);
+    margin-bottom: 1.5rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+/* --- Buttons --- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 28px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: var(--transition);
+    border: 2px solid transparent;
+    text-decoration: none;
+    line-height: 1;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--text-on-primary);
+    box-shadow: 0 4px 0px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(245, 185, 0, 0.3);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: var(--text-on-secondary);
+    border-color: var(--road-gray); /* Gives it a subtle outline */
+}
+
+.btn-secondary:hover {
+    background-color: var(--secondary-hover);
+    border-color: var(--primary-color); /* Highlight the border in yellow */
+    color: var(--primary-color);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- Section Header Container --- */
+.section-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 60px;
+    position: relative;
+    padding: 0 20px;
+}
+
+/* --- Sub-title (The Accent Label) --- */
+.sub-title {
+    display: block;
+    color: var(--primary-color);
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 5px; /* Wide industrial spacing */
+    margin-bottom: 12px;
+    position: relative;
+    opacity: 0.9;
+}
+
+/* --- Main Title (Large & Bold) --- */
+.main-title {
+    font-size: clamp(2rem, 5vw, 3.5rem); /* Fluid typography */
+    font-weight: 900;
+    line-height: 1;
+    color: var(--text-header);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    letter-spacing: -1px; /* Tighter heading for a modern look */
+}
+
+/* The Glowing Text Effect */
+.text-glow {
+    color: var(--primary-color);
+    position: relative;
+    display: inline-block;
+    text-shadow: 0 0 15px rgba(245, 185, 0, 0.4);
+}
+
+/* --- The "Racing Stripe" Underline --- */
+.main-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--primary-color);
+    margin: 15px auto 0;
+    border-radius: 2px;
+    /* Animation effect */
+    transition: width 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.section-header:hover .main-title::after {
+    width: 120px; /* Stripe expands on hover */
+}
+
+/* --- Section Description --- */
+.section-description {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 550px;
+    margin: 0 auto;
+    font-weight: 400;
+    border-left: 1px solid var(--road-gray); /* Subtle industrial touch */
+    padding-left: 20px;
+}
+
+/* --- Responsive Adjustments (768px) --- */
+@media (max-width: 768px) {
+    .section-header {
+        text-align: left; /* Alignment change for mobile edge-readability */
+        padding-left: 15px;
+    }
+
+    .sub-title {
+        letter-spacing: 3px;
+    }
+
+    .main-title {
+        font-size: 2.2rem;
+    }
+
+    .main-title::after {
+        margin: 15px 0 0; /* Align stripe to the left on mobile */
+    }
+
+    .section-description {
+        font-size: 1rem;
+        padding-left: 15px;
+        margin: 0;
+    }
+}
