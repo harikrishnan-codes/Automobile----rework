@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,7 @@
     <link rel="icon" href="./assets/bg remove.webp">
 
     <link rel="stylesheet" href="admin.css">
-    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="customer.css">
     <link rel="stylesheet" href="./root.css">
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -15,353 +16,398 @@
 
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
+
 <body>
-    
+
     <section class="dashboard">
-    <aside id="sidebar">
-        <div class="aside-brand">
-            <div class="brand-inner">
-                <h3>Driver<span>Sync</span></h3>
-                <div class="user-tag">Elite Member</div>
-            </div>
-        </div>
-
-        <nav class="aside-nav">
-            <ul>
-                <li class="active">
-                    <a href="#my-garage">
-                        <i class="material-icons">minor_crash</i>
-                        <span>My Garage</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#transmission-history">
-                        <i class="material-icons">history_edits</i>
-                        <span>Transmissions</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#gift-vault">
-                        <i class="material-icons">redeem</i>
-                        <span>Gift Vault</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#support">
-                        <i class="material-icons">support_agent</i>
-                        <span>Lab Support</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-
-        <div class="aside-user">
-            <div class="user-card-inner">
-                <div class="user-avatar admin-glow">DT</div>
-                <div class="user-meta">
-                    <p>Dominic T.</p>
-                    <span>ID: #UNIT_A01</span>
-                </div>
-                <button class="logout-icon" onclick="logout()">
-                    <i class="material-icons">logout</i>
-                </button>
-            </div>
-        </div>
-    </aside>
-
-    <main>
-        <div class="mobile-header">
-            <div class="mobile-logo"><h3>Driver<span>Sync</span></h3></div>
-            <button id="hamburger" class="hamburger-btn"><i class="material-icons">menu</i></button>
-        </div>
-
-        <div class="content-header">
-            <div class="top-bar">
-                <div class="user-greeting">
-                    <h2>Welcome, <span>Dominic</span></h2>
-                    <p>Vehicle System Status: <strong>Optimal</strong> | Last Sync: 2m ago</p>
-                </div>
-                <div class="header-actions">
-                    <div class="action-btn notification"><i class="material-icons">bolt</i><span class="dot"></span></div>
-                    <div class="action-btn settings"><i class="material-icons">account_circle</i></div>
-                </div>
-            </div>
-        </div>
-
-        <div class="content-body">
-            <div class="summary-grid" data-aos="fade-up">
-                <div class="stat-card">
-                    <i class="material-icons">account_balance_wallet</i>
-                    <div class="stat-meta">
-                        <h4>Gift Balance</h4>
-                        <p>$1,250.00</p>
-                    </div>
-                </div>
-                <div class="stat-card">
-                    <i class="material-icons">stars</i>
-                    <div class="stat-meta">
-                        <h4>Tier Level</h4>
-                        <p>Pro Tuner</p>
-                    </div>
-                </div>
-                <div class="stat-card">
-                    <i class="material-icons">timer</i>
-                    <div class="stat-meta">
-                        <h4>Service Due</h4>
-                        <p>14 Days</p>
-                    </div>
+        <aside id="sidebar">
+            <div class="aside-brand">
+                <div class="brand-inner">
+                    <h3>Driver<span>Sync</span></h3>
+                    <div class="user-tag">Elite Member</div>
                 </div>
             </div>
 
-            <div class="performance-overview" data-aos="fade-up">
-                <div class="inventory-card">
-                    <div class="card-header-main">
-                        <i class="material-icons">settings_input_component</i>
-                        <h3>Active Vehicle: <strong>Turbo Stealth V8</strong></h3>
+            <nav class="aside-nav">
+                <ul>
+                    <li class="active">
+                        <a href="./error.html">
+                            <i class="material-icons">minor_crash</i>
+                            <span>My Garage</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./error.html">
+                            <i class="fa-solid fa-gears"></i> <span>Transmissions</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./error.html">
+                            <i class="material-icons">redeem</i>
+                            <span>Gift Vault</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./error.html">
+                            <i class="material-icons">support_agent</i>
+                            <span>Lab Support</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="aside-user">
+                <div class="user-card-inner">
+                    <div class="user-avatar admin-glow">DT</div>
+                    <div class="user-meta">
+                        <p id="user-display-email">Alex Vance</p> <span>ID: #UNIT_A01</span>
                     </div>
-                    <div class="hud-display">
-                        <div class="hud-item">
-                            <span class="hud-label">Engine Health</span>
-                            <div class="hud-bar"><div class="hud-fill" style="width: 98%;"></div></div>
+                    <button class="logout-icon" onclick="window.location.href='./index.html'">
+                        <i class="material-icons">logout</i>
+                    </button>
+                </div>
+            </div>
+        </aside>
+
+        <main>
+
+            <div class="mobile-header">
+                <div class="mobile-logo">
+                    <img src="./assets/light yellow.webp" alt="logo" width="150px">
+                </div>
+                <button id="hamburger" class="hamburger-btn"><i class="material-icons">menu</i></button>
+            </div>
+
+            <div class="content-header">
+                <div class="top-bar">
+                    <div class="user-greeting">
+                        <h2>Welcome, <span>Dominic</span></h2>
+                        <p>Vehicle System Status: <strong>Optimal</strong> | Last Sync: 2m ago</p>
+                    </div>
+                    <div class="header-actions">
+                        <div class="action-btn notification">
+                            <i class="material-icons">bolt</i><span class="dot"></span>
                         </div>
-                        <div class="hud-item">
-                            <span class="hud-label">Tire Pressure</span>
-                            <div class="hud-bar"><div class="hud-fill" style="width: 85%;"></div></div>
+                        <div class="action-btn settings">
+                            <i class="material-icons">account_circle</i>
                         </div>
-                        <div class="hud-item">
-                            <span class="hud-label">ECU Sync</span>
-                            <div class="hud-bar"><div class="hud-fill pulse-glow" style="width: 100%;"></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-body">
+                <div class="summary-grid" data-aos="fade-up">
+                    <div class="stat-card">
+                        <i class="material-icons">account_balance_wallet</i>
+                        <div class="stat-meta">
+                            <h4>Gift Balance</h4>
+                            <p>$1,250.00</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="material-icons">stars</i>
+                        <div class="stat-meta">
+                            <h4>Tier Level</h4>
+                            <p>Pro Tuner</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="material-icons">timer</i>
+                        <div class="stat-meta">
+                            <h4>Service Due</h4>
+                            <p>14 Days</p>
                         </div>
                     </div>
                 </div>
 
-
-
-                <section class="customer-activity" data-aos="fade-up">
-    <div class="activity-grid">
-        
-        <div class="inventory-card">
-            <div class="card-header-main">
-                <i class="material-icons">history</i>
-                <h3>Transmission History</h3>
-            </div>
-            
-            <div class="history-list">
-                <div class="history-item">
-                    <div class="hist-icon"><i class="material-icons">add_circle</i></div>
-                    <div class="hist-meta">
-                        <p>Performance Credit Added</p>
-                        <span>TransID: #TR-9921 • 12 Apr 2026</span>
+                <div class="performance-overview" data-aos="fade-up">
+                    <div class="inventory-card">
+                        <div class="card-header-main">
+                            <i class="material-icons">settings_input_component</i>
+                            <h3>Active Vehicle: <strong>Turbo Stealth V8</strong></h3>
+                        </div>
+                        <div class="hud-display">
+                            <div class="hud-item">
+                                <span class="hud-label">Engine Health</span>
+                                <div class="hud-bar">
+                                    <div class="hud-fill" style="width: 98%;"></div>
+                                </div>
+                            </div>
+                            <div class="hud-item">
+                                <span class="hud-label">Tire Pressure</span>
+                                <div class="hud-bar">
+                                    <div class="hud-fill" style="width: 85%;"></div>
+                                </div>
+                            </div>
+                            <div class="hud-item">
+                                <span class="hud-label">ECU Sync</span>
+                                <div class="hud-bar">
+                                    <div class="hud-fill pulse-glow" style="width: 100%;"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="hist-amount pos">+$500.00</div>
+
+
+
+                    <section class="customer-activity" data-aos="fade-up">
+                        <div class="activity-grid">
+
+                            <div class="inventory-card">
+                                <div class="card-header-main">
+                                    <i class="material-icons">history</i>
+                                    <h3>Transmission History</h3>
+                                </div>
+
+                                <div class="history-list">
+                                    <div class="history-item">
+                                        <div class="hist-icon"><i class="material-icons">add_circle</i></div>
+                                        <div class="hist-meta">
+                                            <p>Performance Credit Added</p>
+                                            <span>TransID: #TR-9921 • 12 Apr 2026</span>
+                                        </div>
+                                        <div class="hist-amount pos">+$500.00</div>
+                                    </div>
+
+                                    <div class="history-item">
+                                        <div class="hist-icon"><i class="material-icons">remove_circle</i></div>
+                                        <div class="hist-meta">
+                                            <p>Stage 2 ECU Mapping</p>
+                                            <span>TransID: #TR-8840 • 05 Apr 2026</span>
+                                        </div>
+                                        <div class="hist-amount">-$250.00</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="inventory-card reward-card">
+                                <div class="card-header-main">
+                                    <i class="material-icons">vpn_key</i>
+                                    <h3>Active Digital Keys</h3>
+                                </div>
+
+                                <div class="reward-stack">
+                                    <div class="digital-key-mini">
+                                        <div class="key-code">LAB-772-SYNC</div>
+                                        <p>Access Level: <strong>Premium Build</strong></p>
+                                        <button class="btn-copy"><i class="material-icons">content_copy</i></button>
+                                    </div>
+
+                                    <div class="referral-box">
+                                        <h4>Invite a Driver</h4>
+                                        <p>Share your signal and earn $50 credit.</p>
+                                        <a href="./error.html" class="btn-refer">Generate Invite</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </section>
+
+
+
+
+
+
+
+
+                    <section class="tuning-analytics" data-aos="fade-up">
+                        <div class="monitor-card analytics-wrapper">
+                            <div class="card-header-main">
+                                <i class="material-icons">query_stats</i>
+                                <h3>System Tuning <span class="text-glow">Analytics</span></h3>
+                            </div>
+
+                            <div class="analytics-grid">
+                                <div class="tuning-dial">
+                                    <div class="dial-outer">
+                                        <div class="dial-inner">
+                                            <span class="dial-percent">88%</span>
+                                            <span class="dial-label">Optimized</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="milestone-log">
+                                    <div class="log-entry-modern">
+                                        <div class="log-status-icon active"></div>
+                                        <div class="log-info">
+                                            <h5>Stage 1: ECU Baseline</h5>
+                                            <p>Mapping completed successfully. HP Gain: +45hp</p>
+                                        </div>
+                                    </div>
+                                    <div class="log-entry-modern">
+                                        <div class="log-status-icon active"></div>
+                                        <div class="log-info">
+                                            <h5>Stage 2: Induction</h5>
+                                            <p>Air-flow sensors calibrated. Torque: +20lb-ft</p>
+                                        </div>
+                                    </div>
+                                    <div class="log-entry-modern pending">
+                                        <div class="log-status-icon"></div>
+                                        <div class="log-info">
+                                            <h5>Stage 3: Hybrid Sync</h5>
+                                            <p>Pending hardware installation at Sector-01 Lab.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+
+
+
+
+
+
+                    <section class="full-width-terminal" data-aos="fade-up">
+                        <div class="monitor-card wide-card">
+                            <div class="card-header-main">
+                                <i class="material-icons">settings_input_hdmi</i>
+                                <h3>Global <span class="text-glow">Telemetry Stream</span></h3>
+                                <div class="terminal-status">
+                                    <span class="pulse-dot"></span> System Encrypted
+                                </div>
+                            </div>
+
+                            <div class="telemetry-wrapper">
+                                <div class="telemetry-row header-row">
+                                    <span>Signal Origin</span>
+                                    <span>Bandwidth</span>
+                                    <span>ECU Load</span>
+                                    <span>Optimization State</span>
+                                </div>
+
+                                <div class="telemetry-row">
+                                    <div class="origin">Sector-01 (Detroit Lab)</div>
+                                    <div class="bandwidth">850 Mbps</div>
+                                    <div class="load-bar">
+                                        <div class="fill" style="width: 45%;"></div>
+                                    </div>
+                                    <div class="state optimal">Stable</div>
+                                </div>
+
+                                <div class="telemetry-row">
+                                    <div class="origin">Sector-05 (Mobile Unit)</div>
+                                    <div class="bandwidth">1.2 Gbps</div>
+                                    <div class="load-bar">
+                                        <div class="fill" style="width: 78%;"></div>
+                                    </div>
+                                    <div class="state warning">High Load</div>
+                                </div>
+
+                                <div class="telemetry-row">
+                                    <div class="origin">Sector-09 (Global Hub)</div>
+                                    <div class="bandwidth">450 Mbps</div>
+                                    <div class="load-bar">
+                                        <div class="fill" style="width: 12%;"></div>
+                                    </div>
+                                    <div class="state optimal">Idle</div>
+                                </div>
+                            </div>
+
+                            <div class="terminal-footer">
+                                <p>Total Active Transmissions: <strong>128 Units</strong></p>
+                                <button class="btn-refresh-stream" onclick="window.location.href='./error.html'">
+                                    <i class="material-icons">sync</i> Update Global Feed
+                                </button>
+                            </div>
+                        </div>
+                    </section>
                 </div>
-
-                <div class="history-item">
-                    <div class="hist-icon"><i class="material-icons">remove_circle</i></div>
-                    <div class="hist-meta">
-                        <p>Stage 2 ECU Mapping</p>
-                        <span>TransID: #TR-8840 • 05 Apr 2026</span>
-                    </div>
-                    <div class="hist-amount">-$250.00</div>
-                </div>
             </div>
-        </div>
+        </main>
 
-        <div class="inventory-card reward-card">
-            <div class="card-header-main">
-                <i class="material-icons">vpn_key</i>
-                <h3>Active Digital Keys</h3>
-            </div>
-            
-            <div class="reward-stack">
-                <div class="digital-key-mini">
-                    <div class="key-code">LAB-772-SYNC</div>
-                    <p>Access Level: <strong>Premium Build</strong></p>
-                    <button class="btn-copy"><i class="material-icons">content_copy</i></button>
-                </div>
-                
-                <div class="referral-box">
-                    <h4>Invite a Driver</h4>
-                    <p>Share your signal and earn $50 credit.</p>
-                    <a href="#" class="btn-refer">Generate Invite</a>
-                </div>
-            </div>
-        </div>
-
-    </div>
-</section>
+        <div id="sidebar-overlay" class="overlay"></div>
+    </section>
 
 
+    <script src="./script.js"></script>
 
 
+    <script>
 
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburger = document.getElementById('hamburger');
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            const navLinks = document.querySelectorAll('.aside-nav a');
 
+            // Requirement: Toggle functionality for Sidebar
+            const toggleSidebar = () => {
+                sidebar.classList.toggle('mobile-active');
+                overlay.classList.toggle('visible');
 
+                // Change icon from menu to close
+                const icon = hamburger.querySelector('i');
+                if (sidebar.classList.contains('mobile-active')) {
+                    icon.textContent = 'close';
+                    icon.style.color = '#fff';
+                } else {
+                    icon.textContent = 'menu';
+                    icon.style.color = 'var(--primary-color)';
+                }
+            };
 
-<section class="tuning-analytics" data-aos="fade-up">
-    <div class="monitor-card analytics-wrapper">
-        <div class="card-header-main">
-            <i class="material-icons">query_stats</i>
-            <h3>System Tuning <span class="text-glow">Analytics</span></h3>
-        </div>
+            hamburger.addEventListener('click', toggleSidebar);
+            overlay.addEventListener('click', toggleSidebar);
 
-        <div class="analytics-grid">
-            <div class="tuning-dial">
-                <div class="dial-outer">
-                    <div class="dial-inner">
-                        <span class="dial-percent">88%</span>
-                        <span class="dial-label">Optimized</span>
-                    </div>
-                </div>
-            </div>
+            // Auto-close and switch content view
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    // Remove active from all
+                    document.querySelectorAll('.aside-nav li').forEach(li => li.classList.remove('active'));
+                    // Add active to current
+                    link.parentElement.classList.add('active');
 
-            <div class="milestone-log">
-                <div class="log-entry-modern">
-                    <div class="log-status-icon active"></div>
-                    <div class="log-info">
-                        <h5>Stage 1: ECU Baseline</h5>
-                        <p>Mapping completed successfully. HP Gain: +45hp</p>
-                    </div>
-                </div>
-                <div class="log-entry-modern">
-                    <div class="log-status-icon active"></div>
-                    <div class="log-info">
-                        <h5>Stage 2: Induction</h5>
-                        <p>Air-flow sensors calibrated. Torque: +20lb-ft</p>
-                    </div>
-                </div>
-                <div class="log-entry-modern pending">
-                    <div class="log-status-icon"></div>
-                    <div class="log-info">
-                        <h5>Stage 3: Hybrid Sync</h5>
-                        <p>Pending hardware installation at Sector-01 Lab.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+                    if (window.innerWidth <= 768) {
+                        toggleSidebar();
+                    }
+                });
+            });
+        });
 
-
-
-
-
-
-
-<section class="full-width-terminal" data-aos="fade-up">
-    <div class="monitor-card wide-card">
-        <div class="card-header-main">
-            <i class="material-icons">settings_input_hdmi</i>
-            <h3>Global <span class="text-glow">Telemetry Stream</span></h3>
-            <div class="terminal-status">
-                <span class="pulse-dot"></span> System Encrypted
-            </div>
-        </div>
-
-        <div class="telemetry-wrapper">
-            <div class="telemetry-row header-row">
-                <span>Signal Origin</span>
-                <span>Bandwidth</span>
-                <span>ECU Load</span>
-                <span>Optimization State</span>
-            </div>
-            
-            <div class="telemetry-row">
-                <div class="origin">Sector-01 (Detroit Lab)</div>
-                <div class="bandwidth">850 Mbps</div>
-                <div class="load-bar"><div class="fill" style="width: 45%;"></div></div>
-                <div class="state optimal">Stable</div>
-            </div>
-
-            <div class="telemetry-row">
-                <div class="origin">Sector-05 (Mobile Unit)</div>
-                <div class="bandwidth">1.2 Gbps</div>
-                <div class="load-bar"><div class="fill" style="width: 78%;"></div></div>
-                <div class="state warning">High Load</div>
-            </div>
-
-            <div class="telemetry-row">
-                <div class="origin">Sector-09 (Global Hub)</div>
-                <div class="bandwidth">450 Mbps</div>
-                <div class="load-bar"><div class="fill" style="width: 12%;"></div></div>
-                <div class="state optimal">Idle</div>
-            </div>
-        </div>
-
-        <div class="terminal-footer">
-            <p>Total Active Transmissions: <strong>128 Units</strong></p>
-            <button class="btn-refresh-stream">
-                <i class="material-icons">sync</i> Update Global Feed
-            </button>
-        </div>
-    </div>
-</section>
-
-
-            </div>
-        </div>
-    </main>
-
-    <div id="sidebar-overlay" class="overlay"></div>
-</section>
-
-
-<script src="./script.js"></script>
-
-
-<script>
-
-document.addEventListener('DOMContentLoaded', () => {
-    const hamburger = document.getElementById('hamburger');
-    const sidebar = document.getElementById('sidebar');
-    const overlay = document.getElementById('sidebar-overlay');
-    const navLinks = document.querySelectorAll('.aside-nav a');
-
-    // Requirement: Toggle functionality for Sidebar
-    const toggleSidebar = () => {
-        sidebar.classList.toggle('mobile-active');
-        overlay.classList.toggle('visible');
-        
-        // Change icon from menu to close
-        const icon = hamburger.querySelector('i');
-        if (sidebar.classList.contains('mobile-active')) {
-            icon.textContent = 'close';
-            icon.style.color = '#fff';
-        } else {
-            icon.textContent = 'menu';
-            icon.style.color = 'var(--primary-color)';
+        // Logout Logic
+        function logout() {
+            if (confirm("System Shutdown: Disconnect from Terminal?")) {
+                window.location.href = "login.html";
+            }
         }
-    };
 
-    hamburger.addEventListener('click', toggleSidebar);
-    overlay.addEventListener('click', toggleSidebar);
 
-    // Auto-close and switch content view
-    navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            // Remove active from all
-            document.querySelectorAll('.aside-nav li').forEach(li => li.classList.remove('active'));
-            // Add active to current
-            link.parentElement.classList.add('active');
 
-            if(window.innerWidth <= 768) {
-                toggleSidebar();
+
+
+
+
+
+        // RBAC js
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Pull the email from storage
+            const loggedInEmail = localStorage.getItem('sessionUserEmail');
+            const displayElement = document.getElementById('user-display-email');
+
+            // 2. If email exists, overwrite the default text
+            if (loggedInEmail && displayElement) {
+                displayElement.textContent = loggedInEmail;
+            } else if (!loggedInEmail) {
+                // Security: If someone tries to access dashboard without login
+                window.location.href = "login.html";
             }
         });
-    });
-});
 
-// Logout Logic
-function logout() {
-    if(confirm("System Shutdown: Disconnect from Terminal?")) {
-        window.location.href = "login.html";
-    }
-}
+        // Update Logout to clear the session
+        function logout() {
+            localStorage.removeItem('sessionUserEmail');
+            window.location.href = "login.html";
+        }
 
 
-</script>
+    </script>
 
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
     <script>
         AOS.init({
@@ -376,4 +422,5 @@ function logout() {
     </script>
 
 </body>
+
 </html>

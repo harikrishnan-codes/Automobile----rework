@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,345 +16,371 @@
 
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
+
 <body>
-    
+
     <section class="dashboard">
-    <aside id="sidebar">
-        <div class="aside-brand">
-            <div class="brand-inner">
-                <h3>Auto<span>Lab</span></h3>
-                <div class="user-tag admin">System Lead</div>
-            </div>
-        </div>
-
-        <nav class="aside-nav">
-            <ul>
-                <li class="active">
-                    <a href="#analytics" data-target="dashboard-view">
-                        <i class="material-icons">query_stats</i>
-                        <span>Dyno Analytics</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#inventory" data-target="garage-view">
-                        <i class="material-icons">directions_car</i>
-                        <span>Garage Inventory</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#transmissions" data-target="transmissions-view">
-                        <i class="material-icons">sensors</i>
-                        <span>Live Transmissions</span>
-                        <span class="nav-badge">08</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#engineers" data-target="team-view">
-                        <i class="material-icons">engineering</i>
-                        <span>Technical Team</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-
-        <div class="aside-user">
-            <div class="user-card-inner">
-                <div class="user-avatar admin-glow">HQ</div>
-                <div class="user-meta">
-                    <p>Lead Engineer</p>
-                    <span>Main Terminal</span>
+        <aside id="sidebar">
+            <div class="aside-brand">
+                <div class="brand-inner">
+                    <img src="./assets/light yellow.webp" alt="logo" width="150px">
+                    <div class="user-tag admin">System Lead</div>
                 </div>
-                <button class="logout-icon" onclick="logout()">
-                    <i class="material-icons">power_settings_new</i>
+            </div>
+
+            <nav class="aside-nav">
+                <ul>
+                    <li class="active">
+                        <a href="./error.html" data-target="dashboard-view">
+                            <i class="material-icons">query_stats</i>
+                            <span>Dyno Analytics</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./error.html" data-target="garage-view">
+                            <i class="material-icons">directions_car</i>
+                            <span>Garage Inventory</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./error.html" data-target="transmissions-view">
+                            <i class="material-icons">sensors</i>
+                            <span>Live Transmissions</span>
+                            <span class="nav-badge">08</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./error.html" data-target="team-view">
+                            <i class="material-icons">engineering</i>
+                            <span>Technical Team</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="aside-user">
+                <div class="user-card-inner">
+                    <div class="user-avatar admin-glow">HQ</div>
+                    <div class="user-meta">
+                        <p id="user-display-email">Alex Vance</p> <span>Main Terminal</span>
+                    </div>
+                    <button class="logout-icon" onclick="window.location.href='./index.html'">
+                        <i class="material-icons">power_settings_new</i>
+                    </button>
+                </div>
+            </div>
+        </aside>
+
+        <main>
+            <div class="mobile-header">
+                <div class="mobile-logo">
+                    <img src="./assets/light yellow.webp" alt="logo" width="150px">
+                </div>
+                <button id="hamburger" class="hamburger-btn">
+                    <i class="material-icons">menu</i>
                 </button>
             </div>
-        </div>
-    </aside>
 
-    <main>
-        <div class="mobile-header">
-            <div class="mobile-logo">
-                <h3>Auto<span>Lab</span></h3>
-            </div>
-            <button id="hamburger" class="hamburger-btn">
-                <i class="material-icons">menu</i>
-            </button>
-        </div>
-
-        <div class="content-header">
-            <div class="top-bar">
-                <div class="user-greeting">
-                    <h2>Engineering <span>Control Unit</span></h2>
-                    <p>Managing high-performance fleet data and biometric security keys.</p>
-                </div>
-
-                <div class="header-actions">
-                    <div class="search-wrapper">
-                        <i class="material-icons">search</i>
-                        <input type="text" placeholder="Search by VIN or ECU ID...">
+            <div class="content-header">
+                <div class="top-bar">
+                    <div class="user-greeting">
+                        <h2> <span>Admin</span> Control unit </h2>
+                        <p>Managing high-performance fleet data and biometric security keys.</p>
                     </div>
-                    <div class="icon-group">
-                        <div class="action-btn notification">
-                            <i class="material-icons">notifications_active</i>
-                            <span class="dot"></span>
+
+                    <div class="header-actions">
+                        <div class="search-wrapper">
+                            <i class="material-icons">search</i>
+                            <input type="text" placeholder="Search by VIN or ECU ID...">
                         </div>
-                        <div class="action-btn settings">
-                            <i class="material-icons">settings_input_component</i>
+                        <div class="icon-group">
+                            <div class="action-btn notification">
+                                <i class="material-icons">notifications_active</i>
+                                <span class="dot"></span>
+                            </div>
+                            <div class="action-btn settings">
+                                <i class="material-icons">settings_input_component</i>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="content-body" id="main-view">
-            <div class="summary-grid" data-aos="fade-up">
-                <div class="stat-card">
-                    <i class="material-icons">speed</i>
-                    <div class="stat-meta">
-                        <h4>Total Horsepower</h4>
-                        <p>14,250 HP</p>
+            <div class="content-body" id="main-view">
+                <div class="summary-grid" data-aos="fade-up">
+                    <div class="stat-card">
+                        <i class="material-icons">speed</i>
+                        <div class="stat-meta">
+                            <h4>Total Horsepower</h4>
+                            <p>14,250 HP</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="material-icons">payments</i>
+                        <div class="stat-meta">
+                            <h4>Credit Transmissions</h4>
+                            <p>$245,000</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="material-icons">electric_car</i>
+                        <div class="stat-meta">
+                            <h4>Active Builds</h4>
+                            <p>12 Units</p>
+                        </div>
                     </div>
                 </div>
-                <div class="stat-card">
-                    <i class="material-icons">payments</i>
-                    <div class="stat-meta">
-                        <h4>Credit Transmissions</h4>
-                        <p>$245,000</p>
+
+                <section class="performance-overview" data-aos="fade-up">
+                    <div class="inventory-grid">
+
+                        <div class="inventory-card table-card">
+                            <div class="card-header-main">
+                                <i class="material-icons">list_alt</i>
+                                <h3>Active Build Log</h3>
+                            </div>
+                            <div class="table-responsive">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>ECU ID</th>
+                                            <th>Vehicle Model</th>
+                                            <th>Build Phase</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="id-text">#ECU-8821</td>
+                                            <td>Turbo Stealth V8</td>
+                                            <td>Stage 2 Tuning</td>
+                                            <td><span class="status-badge pulse">Active</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="id-text">#ECU-4410</td>
+                                            <td>Neo-Classic Drift</td>
+                                            <td>Aero Mapping</td>
+                                            <td><span class="status-badge">Standby</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="id-text">#ECU-9092</td>
+                                            <td>Carbon GT-X</td>
+                                            <td>Dyno Testing</td>
+                                            <td><span class="status-badge pulse">Active</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="inventory-card chart-card">
+                            <div class="card-header-main">
+                                <i class="material-icons">data_usage</i>
+                                <h3>System Optimization</h3>
+                            </div>
+                            <div class="radial-container">
+                                <div class="radial-progress">
+                                    <div class="radial-value">94<span>%</span></div>
+                                </div>
+                                <p class="chart-label">Network Efficiency: <strong>Optimal</strong></p>
+                            </div>
+                        </div>
+
                     </div>
-                </div>
-                <div class="stat-card">
-                    <i class="material-icons">electric_car</i>
-                    <div class="stat-meta">
-                        <h4>Active Builds</h4>
-                        <p>12 Units</p>
+                </section>
+
+
+                <section class="system-monitor" data-aos="fade-up">
+                    <div class="monitor-grid">
+
+                        <div class="monitor-card feed-box">
+                            <div class="card-header-main">
+                                <i class="material-icons">sensors</i>
+                                <h3>Transmission Logs</h3>
+                                <span class="live-indicator">LIVE FEED</span>
+                            </div>
+
+                            <div class="log-stream">
+                                <div class="log-entry">
+                                    <span class="log-time">14:22:01</span>
+                                    <p>ECU Synchronization complete for <strong>#UNIT-09</strong></p>
+                                    <div class="signal-bar"></div>
+                                </div>
+                                <div class="log-entry">
+                                    <span class="log-time">14:18:45</span>
+                                    <p>New Transmission Key generated: <strong>$500 Gold</strong></p>
+                                    <div class="signal-bar"></div>
+                                </div>
+                                <div class="log-entry warning">
+                                    <span class="log-time">14:05:12</span>
+                                    <p>System Warning: Cooling Node #04 high thermal load</p>
+                                    <div class="signal-bar"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="monitor-card action-box">
+                            <div class="card-header-main">
+                                <i class="material-icons">settings_remote</i>
+                                <h3>System Overrides</h3>
+                            </div>
+
+                            <div class="action-buttons">
+                                <button class="override-btn">
+                                    <i class="material-icons">security</i>
+                                    <span>Lock All Terminals</span>
+                                </button>
+                                <button class="override-btn active">
+                                    <i class="material-icons">refresh</i>
+                                    <span>Recalibrate Dyno</span>
+                                </button>
+                                <button class="override-btn">
+                                    <i class="material-icons">save</i>
+                                    <span>Export Telemetry</span>
+                                </button>
+                            </div>
+                        </div>
+
                     </div>
-                </div>
+                </section>
+
+
+
+
+
+                <section class="fleet-management" data-aos="fade-up">
+                    <div class="monitor-card">
+                        <div class="card-header-main">
+                            <i class="material-icons">manage_accounts</i>
+                            <h3>Fleet Access Control</h3>
+                            <button class="btn-add-unit" onclick="window.location.href='./error.html'"><i
+                                    class="material-icons">add</i> Add Unit</button>
+                        </div>
+
+                        <div class="fleet-list">
+                            <div class="fleet-item">
+                                <div class="unit-id">UNIT_A01</div>
+                                <div class="user-info">
+                                    <p class="user-name">Dominic T. <span class="badge-pro">PRO</span></p>
+                                    <span class="user-email">d.torreto@autolab.com</span>
+                                </div>
+                                <div class="build-specs">
+                                    <span class="spec-tag">V8 Twin Turbo</span>
+                                    <span class="spec-tag">Carbon Aero</span>
+                                </div>
+                                <div class="item-actions">
+                                    <button class="icon-btn-min" onclick="window.location.href='./error.html'"><i
+                                            class="material-icons">edit_note</i></button>
+                                    <button class="icon-btn-min danger" onclick="window.location.href='./error.html'"><i
+                                            class="material-icons">link_off</i></button>
+                                </div>
+                            </div>
+
+                            <div class="fleet-item">
+                                <div class="unit-id">UNIT_B12</div>
+                                <div class="user-info">
+                                    <p class="user-name">Sarah Connor</p>
+                                    <span class="user-email">s.connor@cyber.io</span>
+                                </div>
+                                <div class="build-specs">
+                                    <span class="spec-tag">Electric Drive</span>
+                                </div>
+                                <div class="item-actions">
+                                    <button class="icon-btn-min" onclick="window.location.href='./error.html'"><i
+                                            class="material-icons">edit_note</i></button>
+                                    <button class="icon-btn-min danger" onclick="window.location.href='./error.html'"><i
+                                            class="material-icons">link_off</i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
             </div>
+        </main>
 
-            <section class="performance-overview" data-aos="fade-up">
-    <div class="inventory-grid">
-        
-        <div class="inventory-card table-card">
-            <div class="card-header-main">
-                <i class="material-icons">list_alt</i>
-                <h3>Active Build Log</h3>
-            </div>
-            <div class="table-responsive">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>ECU ID</th>
-                            <th>Vehicle Model</th>
-                            <th>Build Phase</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="id-text">#ECU-8821</td>
-                            <td>Turbo Stealth V8</td>
-                            <td>Stage 2 Tuning</td>
-                            <td><span class="status-badge pulse">Active</span></td>
-                        </tr>
-                        <tr>
-                            <td class="id-text">#ECU-4410</td>
-                            <td>Neo-Classic Drift</td>
-                            <td>Aero Mapping</td>
-                            <td><span class="status-badge">Standby</span></td>
-                        </tr>
-                        <tr>
-                            <td class="id-text">#ECU-9092</td>
-                            <td>Carbon GT-X</td>
-                            <td>Dyno Testing</td>
-                            <td><span class="status-badge pulse">Active</span></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <div class="inventory-card chart-card">
-            <div class="card-header-main">
-                <i class="material-icons">data_usage</i>
-                <h3>System Optimization</h3>
-            </div>
-            <div class="radial-container">
-                <div class="radial-progress">
-                    <div class="radial-value">94<span>%</span></div>
-                </div>
-                <p class="chart-label">Network Efficiency: <strong>Optimal</strong></p>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-
-<section class="system-monitor" data-aos="fade-up">
-    <div class="monitor-grid">
-        
-        <div class="monitor-card feed-box">
-            <div class="card-header-main">
-                <i class="material-icons">sensors</i>
-                <h3>Transmission Logs</h3>
-                <span class="live-indicator">LIVE FEED</span>
-            </div>
-            
-            <div class="log-stream">
-                <div class="log-entry">
-                    <span class="log-time">14:22:01</span>
-                    <p>ECU Synchronization complete for <strong>#UNIT-09</strong></p>
-                    <div class="signal-bar"></div>
-                </div>
-                <div class="log-entry">
-                    <span class="log-time">14:18:45</span>
-                    <p>New Transmission Key generated: <strong>$500 Gold</strong></p>
-                    <div class="signal-bar"></div>
-                </div>
-                <div class="log-entry warning">
-                    <span class="log-time">14:05:12</span>
-                    <p>System Warning: Cooling Node #04 high thermal load</p>
-                    <div class="signal-bar"></div>
-                </div>
-            </div>
-        </div>
-
-        <div class="monitor-card action-box">
-            <div class="card-header-main">
-                <i class="material-icons">settings_remote</i>
-                <h3>System Overrides</h3>
-            </div>
-            
-            <div class="action-buttons">
-                <button class="override-btn">
-                    <i class="material-icons">security</i>
-                    <span>Lock All Terminals</span>
-                </button>
-                <button class="override-btn active">
-                    <i class="material-icons">refresh</i>
-                    <span>Recalibrate Dyno</span>
-                </button>
-                <button class="override-btn">
-                    <i class="material-icons">save</i>
-                    <span>Export Telemetry</span>
-                </button>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-
-
-
-
-<section class="fleet-management" data-aos="fade-up">
-    <div class="monitor-card">
-        <div class="card-header-main">
-            <i class="material-icons">manage_accounts</i>
-            <h3>Fleet Access Control</h3>
-            <button class="btn-add-unit"><i class="material-icons">add</i> Add Unit</button>
-        </div>
-
-        <div class="fleet-list">
-            <div class="fleet-item">
-                <div class="unit-id">UNIT_A01</div>
-                <div class="user-info">
-                    <p class="user-name">Dominic T. <span class="badge-pro">PRO</span></p>
-                    <span class="user-email">d.torreto@autolab.com</span>
-                </div>
-                <div class="build-specs">
-                    <span class="spec-tag">V8 Twin Turbo</span>
-                    <span class="spec-tag">Carbon Aero</span>
-                </div>
-                <div class="item-actions">
-                    <button class="icon-btn-min"><i class="material-icons">edit_note</i></button>
-                    <button class="icon-btn-min danger"><i class="material-icons">link_off</i></button>
-                </div>
-            </div>
-
-            <div class="fleet-item">
-                <div class="unit-id">UNIT_B12</div>
-                <div class="user-info">
-                    <p class="user-name">Sarah Connor</p>
-                    <span class="user-email">s.connor@cyber.io</span>
-                </div>
-                <div class="build-specs">
-                    <span class="spec-tag">Electric Drive</span>
-                </div>
-                <div class="item-actions">
-                    <button class="icon-btn-min"><i class="material-icons">edit_note</i></button>
-                    <button class="icon-btn-min danger"><i class="material-icons">link_off</i></button>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-        </div>
-    </main>
-
-    <div id="sidebar-overlay" class="overlay"></div>
-</section>
+        <div id="sidebar-overlay" class="overlay"></div>
+    </section>
 
 
 
 
 
 
-<script src="./script.js"></script>
+    <script src="./script.js"></script>
 
-<script>
+    <script>
 
-document.addEventListener('DOMContentLoaded', () => {
-    const hamburger = document.getElementById('hamburger');
-    const sidebar = document.getElementById('sidebar');
-    const overlay = document.getElementById('sidebar-overlay');
-    const navLinks = document.querySelectorAll('.aside-nav a');
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburger = document.getElementById('hamburger');
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            const navLinks = document.querySelectorAll('.aside-nav a');
 
-    // Requirement: Toggle functionality for Sidebar
-    const toggleSidebar = () => {
-        sidebar.classList.toggle('mobile-active');
-        overlay.classList.toggle('visible');
-        
-        // Change icon from menu to close
-        const icon = hamburger.querySelector('i');
-        if (sidebar.classList.contains('mobile-active')) {
-            icon.textContent = 'close';
-            icon.style.color = '#fff';
-        } else {
-            icon.textContent = 'menu';
-            icon.style.color = 'var(--primary-color)';
+            const toggleSidebar = () => {
+                sidebar.classList.toggle('mobile-active');
+                overlay.classList.toggle('visible');
+
+                const icon = hamburger.querySelector('i');
+                if (sidebar.classList.contains('mobile-active')) {
+                    icon.textContent = 'close';
+                    icon.style.color = '#fff';
+                } else {
+                    icon.textContent = 'menu';
+                    icon.style.color = 'var(--primary-color)';
+                }
+            };
+
+            hamburger.addEventListener('click', toggleSidebar);
+            overlay.addEventListener('click', toggleSidebar);
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    document.querySelectorAll('.aside-nav li').forEach(li => li.classList.remove('active'));
+                    link.parentElement.classList.add('active');
+
+                    if (window.innerWidth <= 768) {
+                        toggleSidebar();
+                    }
+                });
+            });
+        });
+
+        // Logout Logic
+        function logout() {
+            if (confirm("System Shutdown: Disconnect from Terminal?")) {
+                window.location.href = "login.html";
+            }
         }
-    };
 
-    hamburger.addEventListener('click', toggleSidebar);
-    overlay.addEventListener('click', toggleSidebar);
 
-    // Auto-close and switch content view
-    navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            // Remove active from all
-            document.querySelectorAll('.aside-nav li').forEach(li => li.classList.remove('active'));
-            // Add active to current
-            link.parentElement.classList.add('active');
 
-            if(window.innerWidth <= 768) {
-                toggleSidebar();
+
+
+        // RBAC js 
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Pull the email from storage
+            const loggedInEmail = localStorage.getItem('sessionUserEmail');
+            const displayElement = document.getElementById('user-display-email');
+
+            // 2. If email exists, overwrite the default text
+            if (loggedInEmail && displayElement) {
+                displayElement.textContent = loggedInEmail;
+            } else if (!loggedInEmail) {
+                // Security: If someone tries to access dashboard without login
+                window.location.href = "login.html";
             }
         });
-    });
-});
 
-// Logout Logic
-function logout() {
-    if(confirm("System Shutdown: Disconnect from Terminal?")) {
-        window.location.href = "login.html";
-    }
-}
+        // Update Logout to clear the session
+        function logout() {
+            localStorage.removeItem('sessionUserEmail');
+            window.location.href = "login.html";
+        }
 
-</script>
+    </script>
 
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
@@ -370,4 +397,5 @@ function logout() {
     </script>
 
 </body>
+
 </html>

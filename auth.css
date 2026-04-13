@@ -1,13 +1,11 @@
-/* --- Authentication Variables --- */
 :root {
     --auth-bg: #050505;
     --card-bg: rgba(15, 15, 15, 0.9);
     --input-bg: #000000;
     --border-color: #222222;
-    --accent-glow: rgba(245, 185, 0, 0.2); /* Matches your primary yellow */
+    --accent-glow: rgba(245, 185, 0, 0.2);
 }
 
-/* --- Ambient Background Animation --- */
 .auth-portal {
     position: relative;
     padding: 80px 0;
@@ -19,8 +17,8 @@
     overflow: hidden;
 }
 
-/* Moving Background Glows */
-.auth-portal::before, .auth-portal::after {
+.auth-portal::before,
+.auth-portal::after {
     content: '';
     position: absolute;
     width: 500px;
@@ -32,15 +30,27 @@
     animation: ambientFloat 10s infinite alternate ease-in-out;
 }
 
-.auth-portal::before { top: -10%; left: -10%; }
-.auth-portal::after { bottom: -10%; right: -10%; animation-delay: -5s; }
-
-@keyframes ambientFloat {
-    from { transform: translate(0, 0); }
-    to { transform: translate(50px, 50px); }
+.auth-portal::before {
+    top: -10%;
+    left: -10%;
 }
 
-/* --- The Auth Card --- */
+.auth-portal::after {
+    bottom: -10%;
+    right: -10%;
+    animation-delay: -5s;
+}
+
+@keyframes ambientFloat {
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(50px, 50px);
+    }
+}
+
 .auth-card {
     position: relative;
     z-index: 10;
@@ -51,7 +61,7 @@
     padding: 50px 40px;
     border: 1px solid var(--border-color);
     border-radius: 12px;
-    box-shadow: 0 40px 100px rgba(0,0,0,0.8);
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.8);
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
@@ -59,13 +69,13 @@
     border-color: var(--primary-color);
 }
 
-/* --- Input Fields & Transitions --- */
 .field-group {
     position: relative;
     margin-bottom: 25px;
 }
 
-.field-group input, .field-group select {
+.field-group input,
+.field-group select {
     width: 100%;
     padding: 16px 20px;
     background: var(--input-bg);
@@ -77,14 +87,13 @@
     transition: all 0.3s ease;
 }
 
-/* Input Focus Glow */
-.field-group input:focus, .field-group select:focus {
+.field-group input:focus,
+.field-group select:focus {
     border-color: var(--primary-color);
     box-shadow: 0 0 15px var(--accent-glow);
     background: #080808;
 }
 
-/* --- Password Eye Symbol Styling --- */
 .password-container {
     position: relative;
 }
@@ -107,7 +116,6 @@
     filter: drop-shadow(0 0 5px var(--primary-color));
 }
 
-/* --- Authentication Button --- */
 .btn-auth {
     width: 100%;
     padding: 18px;
@@ -132,7 +140,6 @@
     box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
 }
 
-/* --- Links & Switches --- */
 .auth-switch {
     text-align: center;
     margin-top: 25px;
@@ -154,7 +161,6 @@
     text-decoration: underline;
 }
 
-/* --- Responsive Layout (768px) --- */
 @media (max-width: 768px) {
     .auth-portal {
         padding: 40px 15px;

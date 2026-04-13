@@ -98,27 +98,24 @@
     <script src="./script.js"></script>
 
     <script>
-       document.addEventListener("DOMContentLoaded", function() {
-    
-    // FIX 1: TAB SWITCHING FUNCTION
-    // ------------------------------------------------------
-    window.switchTab = function(tabName) {
-        // Hide all cards
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+    // 1. TAB SWITCHING (Signup / Login / Forgot)
+    window.switchTab = function (tabName) {
         document.getElementById('signup-section').style.display = 'none';
         document.getElementById('login-section').style.display = 'none';
         document.getElementById('forgot-section').style.display = 'none';
-        
-        // Show the selected card
+
         const target = document.getElementById(tabName + '-section');
         if (target) {
             target.style.display = 'block';
-            // Trigger AOS if you want it to re-animate on switch
             AOS.refresh();
         }
     };
 
     // 2. PASSWORD VISIBILITY TOGGLE
-    window.togglePass = function(inputId, iconElement) {
+    window.togglePass = function (inputId, iconElement) {
         const passwordInput = document.getElementById(inputId);
         if (passwordInput.type === "password") {
             passwordInput.type = "text";
@@ -131,43 +128,47 @@
         }
     };
 
-    // 3. SIGNUP SUBMISSION
+    // 3. SIGNUP LOGIC (Redirects to Login)
     const signupForm = document.getElementById('signup-form');
     if (signupForm) {
-        signupForm.addEventListener('submit', function(e) {
+        signupForm.addEventListener('submit', function (e) {
             e.preventDefault();
-            
-            // Validation check for Confirm Password
             const p1 = document.getElementById('pass-signup').value;
             const p2 = document.getElementById('pass-confirm').value;
-            
+
             if (p1 !== p2) {
                 alert("Security Keys do not match!");
                 return;
             }
 
+            // Capture the role during signup to remember it for login
+            const role = document.getElementById('signup-role').value;
+            localStorage.setItem('userRole', role);
+
             alert("Profile Verified. Redirecting to Login Terminal...");
-            switchTab('login'); // Switch to login view instead of page reload
+            switchTab('login');
         });
     }
 
-    // 4. LOGIN & ROLE-BASED ROUTING
+    // 4. INTEGRATED LOGIN & RBAC REDIRECTION
     const loginForm = document.getElementById('login-form');
     if (loginForm) {
-        loginForm.addEventListener('submit', function(e) {
+        loginForm.addEventListener('submit', function (e) {
             e.preventDefault();
-            
-            // Updated to match your HTML ID 'signup-role' 
-            // Note: In a real app, you'd get this from your database
-            const roleSelector = document.getElementById('signup-role');
-            const selectedRole = roleSelector ? roleSelector.value : 'customer';
+
+            // CAPTURE EMAIL FOR DASHBOARD
+            const emailInput = this.querySelector('input[type="email"]').value;
+            localStorage.setItem('sessionUserEmail', emailInput);
+
+            // GET ROLE (Stored during signup or default to customer)
+            const selectedRole = localStorage.getItem('userRole') || 'customer';
 
             if (selectedRole === 'admin') {
-                alert("Admin Access Granted.");
-                window.location.href = "admin.html";
+                alert("Admin Access Granted. Syncing Terminal...");
+                window.location.href = "admin.html"; // Ensure this matches your admin filename
             } else {
-                alert("Customer Access Granted.");
-                window.location.href = "customer.html";
+                alert("Customer Access Granted. Syncing Terminal...");
+                window.location.href = "customer.html"; // Ensure this matches your customer filename
             }
         });
     }
@@ -175,12 +176,13 @@
     // 5. FORGOT PASSWORD
     const forgotForm = document.getElementById('forgot-form');
     if (forgotForm) {
-        forgotForm.addEventListener('submit', function(e) {
+        forgotForm.addEventListener('submit', function (e) {
             e.preventDefault();
             window.location.href = "error.html";
         });
     }
 });
+
     </script>
 
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>

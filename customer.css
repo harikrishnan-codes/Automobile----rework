@@ -1,18 +1,14 @@
-/* --- Sidebar Variables --- */
 :root {
     --sidebar-width: 280px;
     --sidebar-bg: var(--text-header);
-    /* Midnight Blue */
     --sidebar-accent: var(--primary-color);
-    /* Electric Blue */
     --sidebar-text: rgba(255, 255, 255, 0.7);
 }
 
-/* --- Aside Container --- */
 aside {
     width: var(--sidebar-width);
     height: 100vh;
-    background: var(--sidebar-bg);
+    background: var(--bg-dark);
     display: flex;
     flex-direction: column;
     position: fixed;
@@ -23,7 +19,6 @@ aside {
     border-right: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* --- Brand Section --- */
 .aside-brand {
     padding: 40px 30px;
 }
@@ -51,7 +46,6 @@ aside {
     letter-spacing: 1px;
 }
 
-/* --- Navigation Links --- */
 .aside-nav {
     flex: 1;
     padding: 0 20px;
@@ -83,7 +77,6 @@ aside {
     font-size: 22px;
 }
 
-/* --- Active & Hover States --- */
 .aside-nav li.active a,
 .aside-nav a:hover {
     color: #fff;
@@ -110,7 +103,6 @@ aside {
     border-radius: 10px;
 }
 
-/* --- User Profile Bottom Card --- */
 .aside-user {
     padding: 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -121,7 +113,6 @@ aside {
     align-items: center;
     gap: 12px;
     padding: 15px;
-    background: rgba(255, 255, 255, 0.03);
     border-radius: 16px;
 }
 
@@ -162,17 +153,14 @@ aside {
     color: #ff4d4d;
 }
 
-/* --- Media Query: 768px --- */
 @media screen and (max-width: 768px) {
     aside {
         left: -100%;
-        /* Hide on mobile by default */
     }
 
     aside.active {
         left: 0;
         width: 100%;
-        /* Full screen drawer on mobile */
     }
 }
 
@@ -182,19 +170,12 @@ aside {
 
 
 
-
-
-
-
-
-/* --- Mobile Header Styles --- */
 .mobile-header {
     display: none;
-    /* Hidden on Desktop */
     justify-content: space-between;
     align-items: center;
     padding: 15px 25px;
-    background: #fff;
+    background: var(--bg-dark);
     border-bottom: 1px solid #eee;
     position: sticky;
     top: 0;
@@ -219,7 +200,6 @@ aside {
     transform: scale(0.9);
 }
 
-/* --- Mobile Sidebar Logic --- */
 @media screen and (max-width: 768px) {
     .mobile-header {
         display: flex;
@@ -227,18 +207,14 @@ aside {
 
     aside {
         left: -280px;
-        /* Hidden off-screen */
         width: 280px;
-        /* Keep fixed width on mobile */
     }
 
     aside.mobile-active {
         left: 0;
-        /* Slides in */
         box-shadow: 20px 0 50px rgba(0, 0, 0, 0.2);
     }
 
-    /* Overlay styling */
     .overlay {
         position: fixed;
         inset: 0;
@@ -256,7 +232,6 @@ aside {
     }
 }
 
-/* Ensure Main expands on Desktop */
 main {
     margin-left: var(--sidebar-width);
     transition: var(--transition);
@@ -275,16 +250,8 @@ main {
 
 
 
-
-
-
-
-
-
-
-/* --- Content Header Wrapper --- */
 .content-header {
-    background: #fff;
+    background: var(--bg-dark);
     padding: 25px 40px;
     border-bottom: 1px solid #edf2f7;
     position: sticky;
@@ -294,12 +261,12 @@ main {
 
 .top-bar {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     gap: 30px;
 }
 
-/* --- Greeting Section --- */
 .user-greeting h2 {
     font-size: 1.6rem;
     color: var(--text-header);
@@ -316,13 +283,16 @@ main {
     margin-top: 4px;
 }
 
-/* --- Header Actions (Search & Icons) --- */
 .header-actions {
     display: flex;
     align-items: center;
     gap: 20px;
     flex: 1;
     justify-content: flex-end;
+}
+
+.header-actions .action-btn {
+    color: var(--accent-blue);
 }
 
 .search-wrapper {
@@ -357,7 +327,6 @@ main {
     box-shadow: 0 0 0 4px rgba(61, 90, 241, 0.05);
 }
 
-/* --- Action Icons --- */
 .icon-group {
     display: flex;
     gap: 12px;
@@ -393,10 +362,10 @@ main {
     border: 2px solid #fff;
 }
 
-/* --- Media Query: 768px --- */
 @media screen and (max-width: 992px) {
     .content-header {
         padding: 20px;
+        position: static;
     }
 
     .search-wrapper {
@@ -406,7 +375,7 @@ main {
 
 @media screen and (max-width: 768px) {
     .top-bar {
-        flex-direction: column;
+        flex-direction: row;
         align-items: flex-start;
         gap: 20px;
     }
@@ -440,14 +409,6 @@ main {
 
 
 
-
-
-
-
-
-
-
-/* --- Customer Specific Dashboard Styles --- */
 .hud-display {
     padding: 10px 0;
 }
@@ -483,18 +444,27 @@ main {
     transition: width 1.5s cubic-bezier(0.17, 0.85, 0.43, 1);
 }
 
-/* ECU Sync Glow Animation */
 .pulse-glow {
     animation: barPulse 2s infinite;
 }
 
 @keyframes barPulse {
-    0% { opacity: 1; box-shadow: 0 0 5px var(--sidebar-accent); }
-    50% { opacity: 0.7; box-shadow: 0 0 15px var(--sidebar-accent); }
-    100% { opacity: 1; box-shadow: 0 0 5px var(--sidebar-accent); }
+    0% {
+        opacity: 1;
+        box-shadow: 0 0 5px var(--sidebar-accent);
+    }
+
+    50% {
+        opacity: 0.7;
+        box-shadow: 0 0 15px var(--sidebar-accent);
+    }
+
+    100% {
+        opacity: 1;
+        box-shadow: 0 0 5px var(--sidebar-accent);
+    }
 }
 
-/* --- Responsive (768px) --- */
 @media screen and (max-width: 768px) {
     .summary-grid {
         grid-template-columns: 1fr;
@@ -518,7 +488,6 @@ main {
 
 
 
-/* --- Customer Activity Section --- */
 .customer-activity {
     padding: 0 30px 40px;
 }
@@ -529,7 +498,6 @@ main {
     gap: 25px;
 }
 
-/* 1. History List Styling */
 .history-list {
     margin-top: 10px;
 }
@@ -547,14 +515,33 @@ main {
     font-size: 20px;
 }
 
-.hist-meta { flex: 1; }
-.hist-meta p { color: #fff; font-size: 14px; font-weight: 600; margin: 0; }
-.hist-meta span { color: #555; font-size: 11px; font-family: 'Courier New', monospace; }
+.hist-meta {
+    flex: 1;
+}
 
-.hist-amount { color: #fff; font-weight: 800; font-size: 14px; }
-.hist-amount.pos { color: var(--sidebar-accent); }
+.hist-meta p {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+}
 
-/* 2. Digital Key Styling */
+.hist-meta span {
+    color: #555;
+    font-size: 11px;
+    font-family: 'Courier New', monospace;
+}
+
+.hist-amount {
+    color: #fff;
+    font-weight: 800;
+    font-size: 14px;
+}
+
+.hist-amount.pos {
+    color: var(--sidebar-accent);
+}
+
 .digital-key-mini {
     background: #000;
     border: 1px dashed #333;
@@ -591,9 +578,10 @@ main {
     transition: 0.3s;
 }
 
-.btn-copy:hover { color: var(--sidebar-accent); }
+.btn-copy:hover {
+    color: var(--sidebar-accent);
+}
 
-/* 3. Referral Box */
 .referral-box {
     background: rgba(245, 185, 0, 0.05);
     padding: 20px;
@@ -602,8 +590,16 @@ main {
     border: 1px solid rgba(245, 185, 0, 0.1);
 }
 
-.referral-box h4 { color: #fff; margin-bottom: 8px; }
-.referral-box p { color: #888; font-size: 12px; margin-bottom: 15px; }
+.referral-box h4 {
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+.referral-box p {
+    color: #888;
+    font-size: 12px;
+    margin-bottom: 15px;
+}
 
 .btn-refer {
     display: inline-block;
@@ -617,17 +613,24 @@ main {
     border-radius: 4px;
 }
 
-/* --- Responsive (768px) --- */
 @media screen and (max-width: 992px) {
-    .activity-grid { grid-template-columns: 1fr; }
+    .activity-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media screen and (max-width: 768px) {
-    .customer-activity { padding: 0 15px 30px; }
-    
-    .history-item { padding: 12px 0; }
-    
-    .hist-amount { font-size: 13px; }
+    .customer-activity {
+        padding: 0 15px 30px;
+    }
+
+    .history-item {
+        padding: 12px 0;
+    }
+
+    .hist-amount {
+        font-size: 13px;
+    }
 }
 
 
@@ -639,7 +642,6 @@ main {
 
 
 
-/* --- Tuning Analytics Section --- */
 .tuning-analytics {
     padding: 0 30px 40px;
 }
@@ -652,7 +654,6 @@ main {
     margin-top: 20px;
 }
 
-/* 1. The Tuning Dial (Circular HUD) */
 .tuning-dial {
     display: flex;
     justify-content: center;
@@ -697,7 +698,6 @@ main {
     margin-top: 5px;
 }
 
-/* 2. Modern Log Entries */
 .log-entry-modern {
     display: flex;
     gap: 20px;
@@ -738,14 +738,17 @@ main {
     font-size: 12px;
 }
 
-/* --- Responsive (768px) --- */
 @media screen and (max-width: 992px) {
-    .analytics-grid { grid-template-columns: 1fr; }
+    .analytics-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media screen and (max-width: 768px) {
-    .tuning-analytics { padding: 0 15px 30px; }
-    
+    .tuning-analytics {
+        padding: 0 15px 30px;
+    }
+
     .dial-outer {
         width: 150px;
         height: 150px;
@@ -770,10 +773,9 @@ main {
 
 
 
-/* --- Full-Width Terminal Section --- */
 .full-width-terminal {
     padding: 0 30px 40px;
-    width: 100%; /* Force full width */
+    width: 100%;
 }
 
 .wide-card {
@@ -784,7 +786,6 @@ main {
     padding: 30px;
 }
 
-/* Header Status */
 .terminal-status {
     margin-left: auto;
     font-size: 11px;
@@ -805,14 +806,13 @@ main {
     animation: blink 1.5s infinite;
 }
 
-/* Telemetry Table Styling */
 .telemetry-wrapper {
     margin: 25px 0;
 }
 
 .telemetry-row {
     display: grid;
-    grid-template-columns: 2fr 1fr 2fr 1fr; /* Spans full width across 4 columns */
+    grid-template-columns: 2fr 1fr 2fr 1fr;
     padding: 18px 0;
     border-bottom: 1px solid #1a1a1a;
     align-items: center;
@@ -828,7 +828,10 @@ main {
     letter-spacing: 1px;
 }
 
-.origin { font-weight: 700; color: #fff; }
+.origin {
+    font-weight: 700;
+    color: #fff;
+}
 
 .load-bar {
     height: 4px;
@@ -843,11 +846,20 @@ main {
     border-radius: 10px;
 }
 
-.state { font-weight: 800; font-size: 11px; text-transform: uppercase; }
-.state.optimal { color: #28a745; }
-.state.warning { color: #ffb347; }
+.state {
+    font-weight: 800;
+    font-size: 11px;
+    text-transform: uppercase;
+}
 
-/* Footer Styling */
+.state.optimal {
+    color: #28a745;
+}
+
+.state.warning {
+    color: #ffb347;
+}
+
 .terminal-footer {
     display: flex;
     justify-content: space-between;
@@ -856,8 +868,14 @@ main {
     padding-top: 25px;
 }
 
-.terminal-footer p { color: #555; font-size: 13px; }
-.terminal-footer strong { color: var(--sidebar-accent); }
+.terminal-footer p {
+    color: #555;
+    font-size: 13px;
+}
+
+.terminal-footer strong {
+    color: var(--sidebar-accent);
+}
 
 .btn-refresh-stream {
     background: #111;
@@ -877,17 +895,20 @@ main {
     color: var(--sidebar-accent);
 }
 
-/* --- Responsive Layout (768px) --- */
 @media screen and (max-width: 768px) {
-    .full-width-terminal { padding: 0 15px 30px; }
+    .full-width-terminal {
+        padding: 0 15px 30px;
+    }
 
     .telemetry-row {
-        grid-template-columns: 1fr 1fr; /* Stack into 2x2 grid for mobile */
+        grid-template-columns: 1fr 1fr;
         gap: 15px;
     }
 
-    .header-row { display: none; } /* Hide headers for vertical mobile view */
-    
+    .header-row {
+        display: none;
+    }
+
     .terminal-footer {
         flex-direction: column;
         gap: 20px;

@@ -2,28 +2,28 @@
 
 :root {
     /* --- Brand Palette --- */
-    --primary-color: #F5B900;       /* High-visibility Yellow */
+    --primary-color: #F5B900;       
     --primary-hover: #D4A000;
     --primary-light: #FFD54F;
     
-    --secondary-color: #1A1A1A;     /* Asphalt Black */
+    --secondary-color: #1A1A1A;     
     --secondary-hover: #333333;
 
     /* --- UI Colors --- */
-    --bg-dark: #121212;             /* Deep Matte Black */
-    --bg-surface: #1E1E1E;          /* Component cards */
-    --chrome-silver: #E0E0E0;       /* Metallic silver accents */
+    --bg-dark: #121212;             
+    --bg-surface: #1E1E1E;          
+    --chrome-silver: #E0E0E0;      
     
     /* --- Text Colors --- */
-    --text-main: #FFFFFF;           /* Paragraphs */
-    --text-header: #FFFFFF;         /* HEADERS (Added this to fix your CSS) */
-    --text-muted: #A0A0A0;          /* Secondary info */
-    --text-on-primary: #000000;     /* Contrast for yellow buttons */
+    --text-main: #FFFFFF;           
+    --text-header: #FFFFFF;          
+    --text-muted: #A0A0A0;           
+    --text-on-primary: #000000;    
     --text-on-secondary: #FFFFFF;
 
     /* --- Functional --- */
-    --accent-red: #FF3B30;          /* Brake Light Red */
-    --accent-blue: #007AFF;         /* LED Headlight Blue */
+    --accent-red: #FF3B30;           
+    --accent-blue: #007AFF;         
 
     /* --- Typography Scale --- */
     --fs-h1: 2.5rem;
@@ -39,8 +39,8 @@
     --lh-body: 1.6;
 
     /* --- Global Styles --- */
-    --radius: 8px;                  /* Clean modern rounding */
-    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Smoother curve */
+    --radius: 8px;                   
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);  
     --shadow-industrial: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
@@ -56,7 +56,7 @@ html {
 }
 
 body {
-    background-color: var(--bg-dark); /* Using the deep black for the track */
+    background-color: var(--bg-dark);  
     color: var(--text-main);
     font-family: 'Inter', sans-serif;
     line-height: var(--lh-body);
@@ -69,8 +69,7 @@ body {
     padding: 0 20px;
 }
 
-/* --- Typography --- */
-h1, h2, h3, h4, h5, h6 {
+ h1, h2, h3, h4, h5, h6 {
     color: var(--text-header);
     font-weight: 700;
     line-height: var(--lh-heading);
@@ -144,8 +143,7 @@ a {
 
 
 
-/* --- Section Header Container --- */
-.section-header {
+ .section-header {
     text-align: center;
     max-width: 700px;
     margin: 0 auto 60px;
@@ -153,31 +151,29 @@ a {
     padding: 0 20px;
 }
 
-/* --- Sub-title (The Accent Label) --- */
-.sub-title {
+ .sub-title {
     display: block;
     color: var(--primary-color);
     font-size: 0.85rem;
     font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 5px; /* Wide industrial spacing */
+    letter-spacing: 5px;  
     margin-bottom: 12px;
     position: relative;
     opacity: 0.9;
 }
 
-/* --- Main Title (Large & Bold) --- */
-.main-title {
-    font-size: clamp(2rem, 5vw, 3.5rem); /* Fluid typography */
+ .main-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);  
     font-weight: 900;
     line-height: 1;
     color: var(--text-header);
     text-transform: uppercase;
     margin-bottom: 20px;
-    letter-spacing: -1px; /* Tighter heading for a modern look */
+    letter-spacing: -1px;  
 }
 
-/* The Glowing Text Effect */
+ 
 .text-glow {
     color: var(--primary-color);
     position: relative;
@@ -185,8 +181,7 @@ a {
     text-shadow: 0 0 15px rgba(245, 185, 0, 0.4);
 }
 
-/* --- The "Racing Stripe" Underline --- */
-.main-title::after {
+ .main-title::after {
     content: '';
     display: block;
     width: 60px;
@@ -194,30 +189,27 @@ a {
     background: var(--primary-color);
     margin: 15px auto 0;
     border-radius: 2px;
-    /* Animation effect */
-    transition: width 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+     transition: width 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .section-header:hover .main-title::after {
-    width: 120px; /* Stripe expands on hover */
+    width: 120px;  
 }
 
-/* --- Section Description --- */
-.section-description {
+ .section-description {
     color: var(--text-muted);
     font-size: 1.1rem;
     line-height: 1.6;
     max-width: 550px;
     margin: 0 auto;
     font-weight: 400;
-    border-left: 1px solid var(--road-gray); /* Subtle industrial touch */
+    border-left: 1px solid var(--road-gray);  
     padding-left: 20px;
 }
 
-/* --- Responsive Adjustments (768px) --- */
-@media (max-width: 768px) {
+ @media (max-width: 768px) {
     .section-header {
-        text-align: left; /* Alignment change for mobile edge-readability */
+        text-align: left;  
         padding-left: 15px;
     }
 
@@ -230,7 +222,7 @@ a {
     }
 
     .main-title::after {
-        margin: 15px 0 0; /* Align stripe to the left on mobile */
+        margin: 15px 0 0;  
     }
 
     .section-description {

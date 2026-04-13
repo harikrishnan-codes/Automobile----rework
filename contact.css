@@ -165,7 +165,7 @@
     gap: 30px;
 }
 
- .channel-card {
+.channel-card {
     background: var(--bg-surface);
     padding: 50px 30px;
     border: 1px solid var(--road-gray);
@@ -212,7 +212,7 @@
     font-size: 1.1rem;
 }
 
- .card-accent-line {
+.card-accent-line {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -233,7 +233,7 @@
     width: 100%;
 }
 
- @media (max-width: 768px) {
+@media (max-width: 768px) {
     .channels-grid {
         grid-template-columns: 1fr;
         gap: 25px;
@@ -241,7 +241,7 @@
 
     .channel-card {
         padding: 40px 20px;
-         transition-delay: 0s !important;
+        transition-delay: 0s !important;
     }
 }
 
@@ -253,7 +253,7 @@
 
 
 
- .contact-form-section {
+.contact-form-section {
     padding: 100px 0;
     background-color: var(--bg-surface);
 }
@@ -265,7 +265,7 @@
     align-items: center;
 }
 
- .intro-title {
+.intro-title {
     font-size: 2.2rem;
     margin-bottom: 20px;
 }
@@ -288,7 +288,7 @@
     color: var(--primary-color);
 }
 
- .form-terminal {
+.form-terminal {
     background: var(--bg-dark);
     padding: 50px;
     border-radius: var(--radius);
@@ -308,12 +308,12 @@
     margin-bottom: 25px;
 }
 
-.field-group #subject option{
+.field-group #subject option {
     background-color: var(--secondary-color);
 }
 
 
- .field-group input,
+.field-group input,
 .field-group textarea,
 .field-group select {
     width: 100%;
@@ -340,7 +340,7 @@
     top: 25px;
 }
 
- .field-group input:focus~label,
+.field-group input:focus~label,
 .field-group input:not(:placeholder-shown)~label,
 .field-group textarea:focus~label,
 .field-group textarea:not(:placeholder-shown)~label {
@@ -352,7 +352,7 @@
     padding: 0 5px;
 }
 
- .field-glow {
+.field-glow {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -367,7 +367,7 @@
     width: 100%;
 }
 
- .btn-submit {
+.btn-submit {
     position: relative;
     width: 100%;
     padding: 18px;
@@ -396,7 +396,7 @@
     left: 100%;
 }
 
- @media (max-width: 768px) {
+@media (max-width: 768px) {
     .form-container {
         grid-template-columns: 1fr;
         gap: 50px;
@@ -428,7 +428,7 @@
 
 
 
- .location-map {
+.location-map {
     position: relative;
     padding: 120px 0;
     min-height: 600px;
@@ -436,7 +436,7 @@
     overflow: hidden;
 }
 
- .map-visual {
+.map-visual {
     position: absolute;
     top: 0;
     left: 0;
@@ -456,7 +456,7 @@
     z-index: 2;
 }
 
- .tracking-crosshair {
+.tracking-crosshair {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -474,14 +474,14 @@
     background: var(--primary-color);
 }
 
- .tracking-crosshair::before {
+.tracking-crosshair::before {
     width: 100%;
     height: 1px;
     top: 50%;
     left: 0;
 }
 
- .tracking-crosshair::after {
+.tracking-crosshair::after {
     width: 1px;
     height: 100%;
     top: 0;
@@ -504,7 +504,7 @@
     }
 }
 
- .hq-container {
+.hq-container {
     position: relative;
     z-index: 10;
 }
@@ -556,7 +556,7 @@
     color: var(--text-header);
 }
 
- @media (max-width: 768px) {
+@media (max-width: 768px) {
     .location-map {
         padding: 80px 0;
         min-height: 500px;
@@ -584,7 +584,7 @@
 
 
 
- .diagnostic-tiers {
+.diagnostic-tiers {
     padding: 100px 0;
     background-color: var(--bg-dark);
     position: relative;
@@ -607,7 +607,7 @@
     transition: var(--transition);
 }
 
- .diag-scanner {
+.diag-scanner {
     position: absolute;
     top: -100%;
     left: 0;
@@ -635,7 +635,7 @@
     }
 }
 
- .diag-code {
+.diag-code {
     font-family: 'Courier New', monospace;
     font-size: 0.75rem;
     color: var(--primary-color);
@@ -685,14 +685,14 @@
     }
 }
 
- .featured-diag {
+.featured-diag {
     border-color: var(--primary-color);
     transform: scale(1.05);
     background: linear-gradient(180deg, #111 0%, #080808 100%);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
 }
 
- @media (max-width: 768px) {
+@media (max-width: 768px) {
     .diag-grid {
         grid-template-columns: 1fr;
         gap: 25px;
@@ -709,7 +709,7 @@
 
 
 
- .signal-cta {
+.signal-cta {
     position: relative;
     padding: 140px 0;
     background-color: #080808;
@@ -717,7 +717,7 @@
     text-align: center;
 }
 
- .signal-waves {
+.signal-waves {
     position: absolute;
     bottom: -50px;
     left: 50%;
@@ -760,7 +760,7 @@
     }
 }
 
- .cta-container {
+.cta-container {
     position: relative;
     z-index: 5;
 }
@@ -773,7 +773,7 @@
     line-height: 1.8;
 }
 
- .btn-signal {
+.btn-signal {
     position: relative;
     display: inline-block;
     padding: 20px 50px;
@@ -805,7 +805,7 @@
     height: 300px;
 }
 
- @media (max-width: 768px) {
+@media (max-width: 768px) {
     .signal-cta {
         padding: 100px 0;
     }
