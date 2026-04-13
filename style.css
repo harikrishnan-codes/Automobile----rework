@@ -1,4 +1,3 @@
-/* --- Header Styles --- */
 .main-header {
     position: fixed;
     top: 0;
@@ -36,12 +35,11 @@
     gap: 2rem;
 }
 
-.nav-links a:hover{
+.nav-links a:hover {
     color: var(--primary-color);
     text-decoration: underline;
 }
 
-/* Close Button (Hidden on Desktop) */
 .close-menu {
     display: none;
     background: none;
@@ -54,7 +52,6 @@
     right: 20px;
 }
 
-/* Hamburger */
 .hamburger {
     display: none;
     flex-direction: column;
@@ -71,7 +68,6 @@
     transition: var(--transition);
 }
 
-/* --- Responsive (768px) --- */
 @media (max-width: 768px) {
     .hamburger {
         display: flex;
@@ -80,8 +76,8 @@
     .nav-links {
         position: fixed;
         top: 0;
-        right: -100%; /* Hidden */
-        width: 100%;  /* Full screen width */
+        right: -100%;
+        width: 100%;
         height: 100vh;
         background-color: var(--secondary-color);
         flex-direction: column;
@@ -91,7 +87,7 @@
     }
 
     .nav-links.active {
-        right: 0; /* Slide in */
+        right: 0;
     }
 
     .close-menu {
@@ -112,7 +108,6 @@
 
 
 
-/* --- Enhanced Hero Styles --- */
 .hero {
     position: relative;
     height: 100vh;
@@ -123,7 +118,6 @@
     background-color: var(--bg-dark);
 }
 
-/* 1. Background with a 'Shutter' Reveal */
 .hero-bg {
     position: absolute;
     top: 0;
@@ -131,11 +125,11 @@
     width: 100%;
     height: 100%;
     background: linear-gradient(to right, rgba(18, 18, 18, 0.95) 20%, rgba(18, 18, 18, 0.2)),
-                url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=1920');
+        url('./assets/hero.webp');
     background-size: cover;
     background-position: center;
     z-index: 1;
-    clip-path: inset(0 100% 0 0); /* Start hidden */
+    clip-path: inset(0 100% 0 0);
     animation: revealBackground 1.5s cubic-bezier(0.77, 0, 0.175, 1) forwards;
 }
 
@@ -144,24 +138,23 @@
     z-index: 2;
 }
 
-/* 2. Text Reveal via Clip-Path (Modern/Premium) */
 .hero-badge {
     display: inline-block;
     color: var(--primary-color);
     font-size: 0.9rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 8px; /* Start wide */
+    letter-spacing: 8px;
     margin-bottom: 1.5rem;
     opacity: 0;
     animation: revealBadge 1s cubic-bezier(0.23, 1, 0.32, 1) forwards 0.8s;
 }
 
 .hero-title {
-    font-size: clamp(2.5rem, 8vw, 5rem); /* Responsive size */
+    font-size: clamp(2.5rem, 8vw, 5rem);
     line-height: 0.9;
     margin-bottom: 1.5rem;
-    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); /* Start hidden bottom */
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
     transform: translateY(50px);
     animation: revealText 1.2s cubic-bezier(0.23, 1, 0.32, 1) forwards 1s;
 }
@@ -176,7 +169,6 @@
     animation: fadeInUp 0.8s ease forwards 1.4s;
 }
 
-/* 3. Button "Glow Burst" Animation */
 .hero-actions {
     display: flex;
     gap: 1.5rem;
@@ -185,14 +177,13 @@
     animation: fadeInUp 0.8s ease forwards 1.6s;
 }
 
-/* --- The New Animation Keyframes --- */
 
-/* Background slides in like a garage door or shutter */
 @keyframes revealBackground {
-    to { clip-path: inset(0 0 0 0); }
+    to {
+        clip-path: inset(0 0 0 0);
+    }
 }
 
-/* Badge letters 'tighten' together like a focusing lens */
 @keyframes revealBadge {
     to {
         opacity: 1;
@@ -200,7 +191,6 @@
     }
 }
 
-/* Title slides up from behind an invisible mask */
 @keyframes revealText {
     to {
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
@@ -215,7 +205,6 @@
     }
 }
 
-/* --- Mobile Fixes (768px) --- */
 @media (max-width: 768px) {
     .hero {
         text-align: center;
@@ -224,7 +213,7 @@
 
     .hero-bg {
         background: linear-gradient(to top, rgba(18, 18, 18, 1) 10%, rgba(18, 18, 18, 0.4)),
-                    url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=1200');
+            url('./assets/hero.webp');
         background-position: center;
     }
 
@@ -242,7 +231,6 @@
 
 
 
-/* --- Features Section --- */
 .features {
     padding: 100px 0;
     background-color: var(--bg-dark);
@@ -266,14 +254,12 @@
     margin-top: 10px;
 }
 
-/* Grid Layout */
 .features-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
 }
 
-/* Feature Card Styling */
 .feature-card {
     background-color: var(--bg-surface);
     padding: 50px 40px;
@@ -298,7 +284,7 @@
 .card-icon {
     font-size: 3rem;
     font-weight: 900;
-    color: rgba(255, 255, 255, 0.05); /* Ghost number effect */
+    color: rgba(255, 255, 255, 0.05);
     position: absolute;
     top: 20px;
     right: 30px;
@@ -324,7 +310,6 @@
     letter-spacing: 1px;
 }
 
-/* --- Hover States --- */
 .feature-card:hover {
     transform: translateY(-10px);
     border-color: var(--primary-color);
@@ -340,19 +325,17 @@
     opacity: 0.2;
 }
 
-/* Highlight the middle card by default (Optional) */
 .feature-card.active {
     border-color: rgba(245, 185, 0, 0.3);
 }
 
-/* --- Responsive (768px) --- */
 @media (max-width: 768px) {
     .features {
         padding: 60px 0;
     }
 
     .features-grid {
-        grid-template-columns: 1fr; /* Stacked cards on mobile */
+        grid-template-columns: 1fr;
         gap: 20px;
     }
 
@@ -382,10 +365,9 @@
 
 
 
-/* --- Showcase Section --- */
 .showcase {
     padding: 100px 0;
-    background-color: var(--bg-surface); /* Contrast against main bg-dark */
+    background-color: var(--bg-surface);
     overflow: hidden;
 }
 
@@ -395,7 +377,6 @@
     gap: 60px;
 }
 
-/* Visual Side with Ken Burns */
 .showcase-visual {
     flex: 1;
     position: relative;
@@ -417,7 +398,7 @@
 }
 
 .showcase-visual:hover .showcase-img {
-    transform: scale(1.1) translateX(10px); /* Manual Ken Burns on hover */
+    transform: scale(1.1) translateX(10px);
 }
 
 .visual-tag {
@@ -433,7 +414,6 @@
     letter-spacing: 1px;
 }
 
-/* Content Side */
 .showcase-content {
     flex: 1;
 }
@@ -444,7 +424,6 @@
     line-height: 1.8;
 }
 
-/* Specs Grid */
 .specs-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -477,14 +456,13 @@
     gap: 15px;
 }
 
-/* --- Responsive (768px) --- */
 @media (max-width: 768px) {
     .showcase {
         padding: 60px 0;
     }
 
     .showcase-container {
-        flex-direction: column; /* Stacks image on top of text */
+        flex-direction: column;
         gap: 40px;
     }
 
@@ -502,7 +480,7 @@
     }
 
     .specs-grid {
-        grid-template-columns: repeat(2, 1fr); /* Keep 2x2 on mobile */
+        grid-template-columns: repeat(2, 1fr);
         text-align: left;
     }
 
@@ -519,16 +497,15 @@
 
 
 
-/* --- Gallery Showcase Section --- */
 .gallery-showcase {
     padding: 100px 0;
-    background-color: var(--bg-dark); /* Keeps the dark 'garage' vibe */
+    background-color: var(--bg-dark);
 }
 
 .section-header {
     text-align: center;
     max-width: 600px;
-    margin: 0 auto 60px; /* Centers the header text */
+    margin: 0 auto 60px;
 }
 
 .section-description {
@@ -538,47 +515,41 @@
     line-height: 1.7;
 }
 
-/* --- Modern Grid Layout (Desktop) --- */
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
-    grid-template-rows: repeat(2, 300px);   /* 2 rows, fixed height */
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 300px);
     gap: 20px;
 }
 
-/* Base Gallery Item Styles */
 .gallery-item {
     position: relative;
-    overflow: hidden; /* Crucial for zoom effect */
+    overflow: hidden;
     border-radius: var(--radius);
     border: 1px solid var(--road-gray);
     box-shadow: var(--shadow-industrial);
     cursor: pointer;
 }
 
-/* The Feature Image (Spans 2 rows) */
 .feature-item {
-    grid-column: 1 / 2; /* First column */
-    grid-row: 1 / 3;    /* Spans row 1 and 2 */
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
 }
 
-/* The Image itself */
 .gallery-img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures image fills container without stretching */
+    object-fit: cover;
     display: block;
-    filter: grayscale(15%); /* Subtle aesthetic desaturation */
-    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1); /* Premium zoom curve */
+    filter: grayscale(15%);
+    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-/* Hover Effect: The 'Car Commercial' Ken Burns Zoom */
 .gallery-item:hover .gallery-img {
-    transform: scale(1.1); /* Slow zoom in */
-    filter: grayscale(0%);  /* Pop into full color */
+    transform: scale(1.1);
+    filter: grayscale(0%);
 }
 
-/* Aesthetic Overlay on Image */
 .image-overlay {
     position: absolute;
     bottom: 0;
@@ -591,7 +562,7 @@
 
 .img-category {
     color: var(--text-main);
-    background-color: rgba(255, 255, 255, 0.1); /* Subtle 'glass' badge */
+    background-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(5px);
     padding: 6px 12px;
     border-radius: 4px;
@@ -601,26 +572,22 @@
     font-weight: 600;
 }
 
-/* --- Responsive (768px) --- */
 @media (max-width: 768px) {
     .gallery-showcase {
         padding: 60px 0;
     }
 
-    /* Change grid to stacked list for mobile readability */
     .gallery-grid {
-        grid-template-columns: 1fr; /* Single column stack */
-        grid-template-rows: auto;    /* Row height defined by content */
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
         gap: 15px;
     }
 
-    /* Reset the feature item so it behaves like the others */
     .feature-item {
         grid-column: auto;
         grid-row: auto;
     }
 
-    /* Define a fixed height for mobile gallery images */
     .gallery-item {
         height: 250px;
     }
@@ -639,7 +606,6 @@
 
 
 
-/* --- Tech Specs Section --- */
 .tech-specs {
     padding: 100px 0;
     background-color: var(--bg-dark);
@@ -648,7 +614,7 @@
 .tech-row {
     display: flex;
     align-items: center;
-    gap: 0; /* Removing gap to allow overlapping */
+    gap: 0;
     margin-bottom: 120px;
     position: relative;
 }
@@ -657,7 +623,6 @@
     flex-direction: row-reverse;
 }
 
-/* Image Wrapper */
 .tech-image {
     flex: 0 0 60%;
     height: 450px;
@@ -674,22 +639,21 @@
     transition: var(--transition);
 }
 
-/* Glassmorphism Card */
 .tech-card {
     flex: 0 0 45%;
-    background: rgba(30, 30, 30, 0.7); /* Frosted Surface */
+    background: rgba(30, 30, 30, 0.7);
     backdrop-filter: blur(15px);
     padding: 50px;
     border-radius: var(--radius);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    margin-left: -10%; /* Overlap the image */
+    margin-left: -10%;
     z-index: 5;
-    box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
 }
 
 .tech-row.reverse .tech-card {
     margin-left: 0;
-    margin-right: -10%; /* Overlap on the other side */
+    margin-right: -10%;
 }
 
 .spec-number {
@@ -723,9 +687,10 @@
     border-radius: 50%;
 }
 
-/* --- Responsive (768px) --- */
 @media (max-width: 768px) {
-    .tech-row, .tech-row.reverse {
+
+    .tech-row,
+    .tech-row.reverse {
         flex-direction: column;
         margin-bottom: 60px;
     }
@@ -739,7 +704,7 @@
     .tech-card {
         flex: 0 0 100%;
         width: 90%;
-        margin: -40px auto 0; /* Overlap vertically on mobile */
+        margin: -40px auto 0;
         padding: 30px;
         text-align: center;
     }
@@ -755,7 +720,6 @@
 
 
 
-/* --- Inventory Section --- */
 .inventory {
     padding: 100px 0;
     background-color: var(--bg-surface);
@@ -768,7 +732,6 @@
     padding: 20px 0;
 }
 
-/* --- Inventory Card --- */
 .inventory-card {
     flex: 0 0 calc(33.333% - 20px);
     background: var(--bg-dark);
@@ -833,26 +796,20 @@
     letter-spacing: 1px;
 }
 
-/* --- Attractive Animations --- */
-
-/* 1. Skew & Lift Effect */
 .inventory-card:hover {
     transform: translateY(-10px) skewX(-1deg);
     border-color: var(--primary-color);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
 }
 
-/* 2. Image Zoom on Hover */
 .inventory-card:hover .card-img-box img {
     transform: scale(1.15);
 }
 
-/* 3. Button Color Pop */
 .inventory-card:hover .btn-text {
     color: var(--primary-color);
 }
 
-/* --- Responsive (768px) --- */
 @media (max-width: 768px) {
     .inventory-track {
         flex-direction: column;
@@ -875,28 +832,23 @@
 
 
 
-/* --- Parallax Stats Section --- */
 .stats-parallax {
     position: relative;
     width: 100%;
     min-height: 600px;
-    /* Fixed Background Image */
-    background-image: url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1920&auto=format&fit=crop');
-    background-attachment: fixed; /* This makes it fixed */
+    background-image: url('./assets/bg\ img.webp');
+    background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
 }
 
-/* Dark Overlay to make text pop */
 .parallax-overlay {
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-        rgba(18, 18, 18, 0.85), 
-        rgba(18, 18, 18, 0.95)
-    );
+    background: linear-gradient(rgba(18, 18, 18, 0.85),
+            rgba(18, 18, 18, 0.95));
     padding: 100px 0;
 }
 
@@ -907,10 +859,9 @@
     align-items: center;
 }
 
-/* Glassmorphism Stat Boxes */
 .stat-box-glass {
-    background: rgba(255, 255, 255, 0.03); /* Extremely subtle white */
-    backdrop-filter: blur(10px); /* Frosted glass */
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
     padding: 40px 20px;
     text-align: center;
     border-radius: var(--radius);
@@ -932,10 +883,9 @@
     text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* --- Responsive (768px) --- */
 @media (max-width: 768px) {
     .stats-parallax {
-        background-attachment: scroll; /* Mobile often struggles with fixed backgrounds */
+        background-attachment: scroll;
     }
 
     .stats-container {
@@ -947,7 +897,7 @@
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .section-description {
         margin: 0 auto;
     }
@@ -955,7 +905,6 @@
 
 
 
-/* --- Performance Stats Section --- */
 .performance-stats {
     padding: 100px 0;
     background-color: var(--bg-surface);
@@ -969,7 +918,6 @@
     align-items: center;
 }
 
-/* --- Progress Bars (Telemetry Style) --- */
 .skill-bars {
     margin-top: 40px;
 }
@@ -1002,17 +950,17 @@
     background: var(--primary-color);
     box-shadow: 0 0 10px var(--primary-color);
     border-radius: 10px;
-    /* Loading Animation */
     animation: loadBar 2s cubic-bezier(0.1, 1, 0.3, 1) forwards;
     transform-origin: left;
     transform: scaleX(0);
 }
 
 @keyframes loadBar {
-    to { transform: scaleX(1); }
+    to {
+        transform: scaleX(1);
+    }
 }
 
-/* --- Stats Grid (Right Side) --- */
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -1051,7 +999,6 @@
     color: var(--text-muted);
 }
 
-/* --- Responsive (768px) --- */
 @media (max-width: 768px) {
     .stats-container {
         grid-template-columns: 1fr;
@@ -1064,7 +1011,7 @@
     }
 
     .stats-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2x2 grid is still good for mobile */
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .stat-box {
@@ -1083,7 +1030,6 @@
 
 
 
-/* --- Pricing Section --- */
 .pricing-tiers {
     padding: 100px 0;
     background-color: var(--bg-dark);
@@ -1096,7 +1042,6 @@
     align-items: center;
 }
 
-/* --- The Price Card --- */
 .price-card {
     background: var(--bg-surface);
     padding: 50px 30px;
@@ -1105,28 +1050,33 @@
     text-align: center;
     position: relative;
     transition: var(--transition);
-    /* Entrance Animation (Applied to all views) */
     opacity: 0;
     transform: translateY(30px);
     animation: revealUp 0.8s cubic-bezier(0.2, 1, 0.3, 1) forwards;
 }
 
-/* Staggered load for all devices */
-.price-card:nth-child(1) { animation-delay: 0.1s; }
-.price-card:nth-child(2) { animation-delay: 0.3s; }
-.price-card:nth-child(3) { animation-delay: 0.5s; }
+.price-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
 
-/* Featured Card Highlight */
+.price-card:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.price-card:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
 .price-card.featured {
     border-color: var(--primary-color);
-    transform: scale(1.05); /* Slightly larger */
+    transform: scale(1.05);
     background: linear-gradient(145deg, var(--bg-surface), #252525);
     z-index: 10;
 }
 
 .featured-badge {
     position: absolute;
-    top: 0;
+    top: 20px;
     left: 50%;
     transform: translate(-50%, -50%);
     background: var(--primary-color);
@@ -1176,7 +1126,6 @@
     gap: 10px;
 }
 
-/* --- High-End Animations (Mobile & Desktop) --- */
 .price-card:hover {
     transform: translateY(-15px) scale(1.02);
     border-color: var(--primary-color);
@@ -1184,38 +1133,41 @@
 }
 
 .price-card.featured:hover {
-    transform: translateY(-15px) scale(1.08); /* Extra pop for featured */
+    transform: translateY(-15px) scale(1.08);
 }
 
-/* --- Responsive (768px) --- */
 @media (max-width: 768px) {
     .pricing-grid {
-        grid-template-columns: 1fr; /* Stack for mobile but keep animations */
+        grid-template-columns: 1fr;
         gap: 50px;
     }
 
     .price-card.featured {
-        transform: scale(1); /* Reset scale for stack, but hover still works */
+        transform: scale(1);
     }
-    
+
     .price-card.featured:hover {
         transform: translateY(-15px) scale(1.05);
     }
 }
 
-/* --- 1. The Entrance 'Ignition' Animation --- */
 .price-card {
     opacity: 0;
-    /* Start slightly smaller and lower */
     transform: translateY(50px) scale(0.9);
-    /* Cubic-bezier mimics a car accelerating from a stop */
     animation: cardIgnition 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* Staggered startup for all devices */
-.price-card:nth-child(1) { animation-delay: 0.1s; }
-.price-card:nth-child(2) { animation-delay: 0.3s; }
-.price-card:nth-child(3) { animation-delay: 0.5s; }
+.price-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.price-card:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.price-card:nth-child(3) {
+    animation-delay: 0.5s;
+}
 
 @keyframes cardIgnition {
     to {
@@ -1224,14 +1176,12 @@
     }
 }
 
-/* --- 2. The 'Magnetic' Hover Effect --- */
 .price-card {
     position: relative;
     z-index: 1;
     overflow: hidden;
 }
 
-/* The Glowing Racing Stripe Reveal */
 .price-card::after {
     content: '';
     position: absolute;
@@ -1248,15 +1198,14 @@
 .price-card:hover {
     transform: translateY(-20px) scale(1.03) !important;
     border-color: var(--primary-color);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7), 
-                0 0 20px rgba(245, 185, 0, 0.2);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7),
+        0 0 20px rgba(245, 185, 0, 0.2);
 }
 
 .price-card:hover::after {
     opacity: 1;
 }
 
-/* --- 3. The Price 'Vibration' Effect --- */
 .price-value {
     transition: transform 0.3s ease;
 }
@@ -1267,18 +1216,24 @@
     text-shadow: 0 0 10px rgba(245, 185, 0, 0.3);
 }
 
-/* --- 4. Pulse Animation for the Featured Button --- */
 .price-card.featured .btn-primary {
     animation: btnPulse 2s infinite;
 }
 
 @keyframes btnPulse {
-    0% { box-shadow: 0 0 0 0 rgba(245, 185, 0, 0.4); }
-    70% { box-shadow: 0 0 0 15px rgba(245, 185, 0, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(245, 185, 0, 0); }
+    0% {
+        box-shadow: 0 0 0 0 rgba(245, 185, 0, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 15px rgba(245, 185, 0, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(245, 185, 0, 0);
+    }
 }
 
-/* --- 5. Feature List Reveal --- */
 .price-features li {
     transform: translateX(-10px);
     opacity: 0.7;
@@ -1291,15 +1246,12 @@
     color: var(--text-main);
 }
 
-/* --- 6. 768px Mobile Consistency --- */
 @media (max-width: 768px) {
-    /* Ensure the scale and hover effects don't break mobile boundaries */
     .price-card:hover {
         transform: translateY(-15px) scale(1.02) !important;
     }
-    
+
     .price-card.featured {
-        /* On mobile stack, we keep the highlight but avoid horizontal overflow */
         margin: 20px 0;
     }
 }
@@ -1310,7 +1262,6 @@
 
 
 
-/* --- Testimonials Section --- */
 .testimonials {
     padding: 100px 0;
     background-color: var(--bg-dark);
@@ -1322,7 +1273,6 @@
     gap: 30px;
 }
 
-/* --- Review Card --- */
 .review-card {
     background: var(--bg-surface);
     padding: 40px;
@@ -1335,9 +1285,13 @@
     animation: revealUp 0.8s ease forwards;
 }
 
-/* Staggered Animation for cards */
-.review-card:nth-child(2) { animation-delay: 0.2s; }
-.review-card:nth-child(3) { animation-delay: 0.4s; }
+.review-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.review-card:nth-child(3) {
+    animation-delay: 0.4s;
+}
 
 .quote-icon {
     font-size: 4rem;
@@ -1357,7 +1311,6 @@
     z-index: 2;
 }
 
-/* Reviewer Layout */
 .reviewer-info {
     display: flex;
     align-items: center;
@@ -1386,8 +1339,6 @@
     letter-spacing: 1px;
 }
 
-/* --- Attractive Hover Animations --- */
-
 .review-card:hover {
     border-color: var(--primary-color);
     box-shadow: 0 0 20px rgba(245, 185, 0, 0.1);
@@ -1407,18 +1358,23 @@
 }
 
 
-/* --- 1. The Entrance Animation (Staggered) --- */
 .review-card {
     opacity: 0;
     transform: translateY(40px) scale(0.95);
-    /* This curve starts fast and settles slowly (like a car braking) */
     animation: carReveal 0.8s cubic-bezier(0.2, 1, 0.3, 1) forwards;
 }
 
-/* Staggered Delays for 3 cards */
-.review-card:nth-child(1) { animation-delay: 0.2s; }
-.review-card:nth-child(2) { animation-delay: 0.4s; }
-.review-card:nth-child(3) { animation-delay: 0.6s; }
+.review-card:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.review-card:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.review-card:nth-child(3) {
+    animation-delay: 0.6s;
+}
 
 @keyframes carReveal {
     to {
@@ -1427,13 +1383,11 @@
     }
 }
 
-/* --- 2. The Border Trace Effect --- */
 .review-card {
     position: relative;
-    overflow: hidden; /* Clips the trace effect */
+    overflow: hidden;
 }
 
-/* The 'Tracing' Line */
 .review-card::before {
     content: '';
     position: absolute;
@@ -1446,52 +1400,52 @@
 }
 
 .review-card:hover::before {
-    left: 100%; /* Line 'races' across the top on hover */
+    left: 100%;
 }
 
-/* --- 3. High-Performance Hover State --- */
 .review-card:hover {
     transform: translateY(-10px);
     border-color: var(--primary-color);
-    background-color: #252525; /* Slightly lighter on hover */
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 
-                0 0 10px rgba(245, 185, 0, 0.1);
+    background-color: #252525;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5),
+        0 0 10px rgba(245, 185, 0, 0.1);
 }
 
-/* --- 4. Reviewer Image 'Rev' Effect --- */
 .reviewer-img {
     transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 .review-card:hover .reviewer-img {
-    transform: scale(1.2) rotate(5deg); /* Bounces slightly like a needle */
+    transform: scale(1.2) rotate(5deg);
     border-color: var(--primary-color);
 }
 
-/* --- 5. Text 'Focus' Animation --- */
 .review-text {
     transition: color 0.3s ease;
 }
 
 .review-card:hover .review-text {
-    color: var(--text-header); /* Text brightens when focusing on card */
+    color: var(--text-header);
 }
 
-/* --- 6. The Glitch Glow (Optional Subtle Effect) --- */
 .review-card:hover .quote-icon {
     animation: glitchGlow 0.3s infinite alternate;
     opacity: 0.4;
 }
 
 @keyframes glitchGlow {
-    0% { text-shadow: -2px 0 var(--accent-red); }
-    100% { text-shadow: 2px 0 var(--accent-blue); }
+    0% {
+        text-shadow: -2px 0 var(--accent-red);
+    }
+
+    100% {
+        text-shadow: 2px 0 var(--accent-blue);
+    }
 }
 
-/* --- Responsive (768px) --- */
 @media (max-width: 768px) {
     .testimonial-grid {
-        grid-template-columns: 1fr; /* Single column stack */
+        grid-template-columns: 1fr;
         gap: 20px;
     }
 
@@ -1513,7 +1467,6 @@
 
 
 
-/* --- FAQ Section --- */
 .faq-section {
     padding: 100px 0;
     background-color: var(--bg-dark);
@@ -1524,7 +1477,6 @@
     margin: 0 auto;
 }
 
-/* --- FAQ Item --- */
 .faq-item {
     background: var(--bg-surface);
     border: 1px solid var(--road-gray);
@@ -1532,19 +1484,27 @@
     margin-bottom: 15px;
     overflow: hidden;
     transition: var(--transition);
-    /* Entrance Animation */
     opacity: 0;
     transform: translateY(20px);
     animation: revealUp 0.6s ease forwards;
 }
 
-/* Staggered load */
-.faq-item:nth-child(1) { animation-delay: 0.1s; }
-.faq-item:nth-child(2) { animation-delay: 0.2s; }
-.faq-item:nth-child(3) { animation-delay: 0.3s; }
-.faq-item:nth-child(4) { animation-delay: 0.4s; }
+.faq-item:nth-child(1) {
+    animation-delay: 0.1s;
+}
 
-/* --- Question Button --- */
+.faq-item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.faq-item:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.faq-item:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
 .faq-question {
     width: 100%;
     padding: 25px 30px;
@@ -1567,9 +1527,8 @@
     transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-/* --- Answer Content --- */
 .faq-answer {
-    max-height: 0; /* Hidden by default */
+    max-height: 0;
     overflow: hidden;
     transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
     background: rgba(0, 0, 0, 0.2);
@@ -1582,7 +1541,6 @@
     line-height: 1.7;
 }
 
-/* --- Active/Hover States (Applied to Mobile & Desktop) --- */
 .faq-item:hover {
     border-color: var(--primary-color);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
@@ -1594,22 +1552,21 @@
 }
 
 .faq-item.active .faq-icon {
-    transform: rotate(45deg); /* Plus turns into X */
+    transform: rotate(45deg);
     color: var(--text-main);
 }
 
 .faq-item.active .faq-answer {
-    max-height: 500px; /* Expands smoothly */
+    max-height: 500px;
     transition: max-height 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* --- Responsive (768px) --- */
 @media (max-width: 768px) {
     .faq-question {
         padding: 20px;
         font-size: 1rem;
     }
-    
+
     .faq-answer p {
         padding: 0 20px 20px;
     }
@@ -1622,7 +1579,6 @@
 
 
 
-/* --- Final CTA Section --- */
 .final-cta {
     position: relative;
     padding: 120px 0;
@@ -1631,14 +1587,13 @@
     text-align: center;
 }
 
-/* 1. The Moving Mesh Gradient Background */
 .cta-mesh {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: 
+    background:
         radial-gradient(circle at 20% 30%, rgba(245, 185, 0, 0.15) 0%, transparent 40%),
         radial-gradient(circle at 80% 70%, rgba(245, 185, 0, 0.1) 0%, transparent 40%);
     filter: blur(60px);
@@ -1647,23 +1602,25 @@
 }
 
 @keyframes meshMove {
-    0% { transform: scale(1) translate(0, 0); }
-    100% { transform: scale(1.2) translate(5%, 5%); }
+    0% {
+        transform: scale(1) translate(0, 0);
+    }
+
+    100% {
+        transform: scale(1.2) translate(5%, 5%);
+    }
 }
 
-/* 2. The Radar Scanline Animation */
 .cta-scanline {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-        to bottom,
-        transparent 0%,
-        rgba(245, 185, 0, 0.1) 50%,
-        transparent 100%
-    );
+    background: linear-gradient(to bottom,
+            transparent 0%,
+            rgba(245, 185, 0, 0.1) 50%,
+            transparent 100%);
     height: 10px;
     width: 100%;
     opacity: 0.5;
@@ -1672,8 +1629,13 @@
 }
 
 @keyframes scanMove {
-    0% { top: -10%; }
-    100% { top: 110%; }
+    0% {
+        top: -10%;
+    }
+
+    100% {
+        top: 110%;
+    }
 }
 
 .cta-container {
@@ -1699,7 +1661,6 @@
     gap: 20px;
 }
 
-/* Custom Outline Button for CTA */
 .btn-outline {
     background: transparent;
     border: 2px solid var(--chrome-silver);
@@ -1712,7 +1673,6 @@
     background: rgba(245, 185, 0, 0.05);
 }
 
-/* --- Responsive (768px) --- */
 @media (max-width: 768px) {
     .final-cta {
         padding: 80px 0;
@@ -1740,7 +1700,6 @@
 
 
 
-/* --- Main Footer --- */
 .main-footer {
     position: relative;
     padding: 80px 0 30px;
@@ -1750,17 +1709,16 @@
     border-top: 1px solid var(--road-gray);
 }
 
-/* 1. Technical Grid Background Pattern */
 .footer-pattern {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: 
+    background-image:
         linear-gradient(rgba(245, 185, 0, 0.03) 1px, transparent 1px),
         linear-gradient(90deg, rgba(245, 185, 0, 0.03) 1px, transparent 1px);
-    background-size: 40px 40px; /* Blueprint grid size */
+    background-size: 40px 40px;
     z-index: 1;
 }
 
@@ -1769,7 +1727,6 @@
     z-index: 2;
 }
 
-/* --- Footer Grid --- */
 .footer-grid {
     display: grid;
     grid-template-columns: 1.5fr 0.8fr 0.8fr 1.2fr;
@@ -1809,10 +1766,9 @@
 
 .footer-links a:hover {
     color: var(--primary-color);
-    padding-left: 5px; /* Interactive nudge */
+    padding-left: 5px;
 }
 
-/* --- Social Icons --- */
 .social-links {
     display: flex;
     gap: 15px;
@@ -1840,7 +1796,6 @@
     border-color: var(--primary-color);
 }
 
-/* --- Newsletter Form --- */
 .footer-form {
     display: flex;
     margin-top: 20px;
@@ -1870,7 +1825,6 @@
     background: var(--primary-hover);
 }
 
-/* --- Footer Bottom --- */
 .footer-bottom {
     padding-top: 30px;
     border-top: 1px solid var(--road-gray);
@@ -1885,10 +1839,9 @@
     margin-left: 20px;
 }
 
-/* --- Responsive (768px) --- */
 @media (max-width: 768px) {
     .footer-grid {
-        grid-template-columns: 1fr; /* Stacks everything on mobile */
+        grid-template-columns: 1fr;
         text-align: center;
         gap: 50px;
     }
@@ -1903,14 +1856,14 @@
     }
 
     .footer-links a:hover {
-        padding-left: 0; /* Remove nudge on mobile for centering */
+        padding-left: 0;
     }
 
     .footer-col:first-child {
-        order: 2; /* Move about section lower */
+        order: 2;
     }
-    
+
     .footer-col:last-child {
-        order: 1; /* Keep newsletter at the top of the stack */
+        order: 1;
     }
 }

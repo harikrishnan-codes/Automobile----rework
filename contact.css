@@ -1,4 +1,3 @@
-/* --- Contact Hero Section --- */
 .contact-hero {
     position: relative;
     height: 80vh;
@@ -11,30 +10,27 @@
     text-align: center;
 }
 
-/* Change this */
 .contact-hero-container {
     position: relative;
     z-index: 5;
-    opacity: 0; /* This is hiding your content */
-    transform: translateY(30px); /* This is pushing it down */
+    opacity: 0;
+    transform: translateY(30px);
 }
 
-/* To this */
 .contact-hero-container {
     position: relative;
     z-index: 5;
-    opacity: 1; 
+    opacity: 1;
     transform: translateY(0);
 }
 
-/* 1. Telemetry & Coordinate Background */
 .telemetry-grid {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: 
+    background-image:
         radial-gradient(circle at 2px 2px, rgba(245, 185, 0, 0.05) 1px, transparent 0);
     background-size: 40px 40px;
     z-index: 1;
@@ -56,11 +52,17 @@
 }
 
 @keyframes pulseCoordinates {
-    0%, 100% { opacity: 0.2; }
-    50% { opacity: 0.6; }
+
+    0%,
+    100% {
+        opacity: 0.2;
+    }
+
+    50% {
+        opacity: 0.6;
+    }
 }
 
-/* 2. Hero Content Animations */
 .contact-hero-container {
     position: relative;
     z-index: 5;
@@ -68,7 +70,6 @@
     transform: translateY(30px);
 }
 
-/* This class is added by the Intersection Observer we used before */
 .contact-hero-container.visible {
     opacity: 1;
     transform: translateY(0);
@@ -79,7 +80,6 @@
     max-width: 750px;
 }
 
-/* 3. Mouse Scroll Indicator */
 .scroll-indicator {
     margin-top: 60px;
     display: flex;
@@ -113,11 +113,17 @@
 }
 
 @keyframes scrollWheel {
-    0% { top: 8px; opacity: 1; }
-    100% { top: 25px; opacity: 0; }
+    0% {
+        top: 8px;
+        opacity: 1;
+    }
+
+    100% {
+        top: 25px;
+        opacity: 0;
+    }
 }
 
-/* --- Responsive (768px) --- */
 @media (max-width: 768px) {
     .contact-hero {
         height: 70vh;
@@ -148,7 +154,6 @@
 
 
 
-/* --- Contact Channels Section --- */
 .contact-channels {
     padding: 100px 0;
     background-color: var(--bg-dark);
@@ -160,8 +165,7 @@
     gap: 30px;
 }
 
-/* --- Channel Card --- */
-.channel-card {
+ .channel-card {
     background: var(--bg-surface);
     padding: 50px 30px;
     border: 1px solid var(--road-gray);
@@ -170,8 +174,6 @@
     position: relative;
     overflow: hidden;
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    
-    /* Initial state for Scroll Reveal */
     opacity: 0;
     transform: translateY(40px);
 }
@@ -210,8 +212,7 @@
     font-size: 1.1rem;
 }
 
-/* --- Hover "Power Up" Animation --- */
-.card-accent-line {
+ .card-accent-line {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -232,8 +233,7 @@
     width: 100%;
 }
 
-/* --- Responsive (768px) --- */
-@media (max-width: 768px) {
+ @media (max-width: 768px) {
     .channels-grid {
         grid-template-columns: 1fr;
         gap: 25px;
@@ -241,8 +241,7 @@
 
     .channel-card {
         padding: 40px 20px;
-        /* Ensure staggered reveal feels natural on mobile scroll */
-        transition-delay: 0s !important; 
+         transition-delay: 0s !important;
     }
 }
 
@@ -254,8 +253,7 @@
 
 
 
-/* --- Contact Form Section --- */
-.contact-form-section {
+ .contact-form-section {
     padding: 100px 0;
     background-color: var(--bg-surface);
 }
@@ -267,8 +265,7 @@
     align-items: center;
 }
 
-/* --- Form Intro --- */
-.intro-title {
+ .intro-title {
     font-size: 2.2rem;
     margin-bottom: 20px;
 }
@@ -291,8 +288,7 @@
     color: var(--primary-color);
 }
 
-/* --- The Terminal Form --- */
-.form-terminal {
+ .form-terminal {
     background: var(--bg-dark);
     padding: 50px;
     border-radius: var(--radius);
@@ -312,8 +308,12 @@
     margin-bottom: 25px;
 }
 
-/* Modern Floating Input */
-.field-group input, 
+.field-group #subject option{
+    background-color: var(--secondary-color);
+}
+
+
+ .field-group input,
 .field-group textarea,
 .field-group select {
     width: 100%;
@@ -336,13 +336,14 @@
     transition: all 0.3s ease;
 }
 
-.field-group textarea ~ label { top: 25px; }
+.field-group textarea~label {
+    top: 25px;
+}
 
-/* Floating Logic */
-.field-group input:focus ~ label,
-.field-group input:not(:placeholder-shown) ~ label,
-.field-group textarea:focus ~ label,
-.field-group textarea:not(:placeholder-shown) ~ label {
+ .field-group input:focus~label,
+.field-group input:not(:placeholder-shown)~label,
+.field-group textarea:focus~label,
+.field-group textarea:not(:placeholder-shown)~label {
     top: -10px;
     left: 10px;
     font-size: 0.75rem;
@@ -351,8 +352,7 @@
     padding: 0 5px;
 }
 
-/* Field Glow Effect */
-.field-glow {
+ .field-glow {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -363,10 +363,11 @@
     transition: width 0.4s ease;
 }
 
-.field-group input:focus ~ .field-glow { width: 100%; }
+.field-group input:focus~.field-glow {
+    width: 100%;
+}
 
-/* --- Submit Button --- */
-.btn-submit {
+ .btn-submit {
     position: relative;
     width: 100%;
     padding: 18px;
@@ -387,7 +388,7 @@
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
     transition: 0.5s;
 }
 
@@ -395,8 +396,7 @@
     left: 100%;
 }
 
-/* --- Responsive (768px) --- */
-@media (max-width: 768px) {
+ @media (max-width: 768px) {
     .form-container {
         grid-template-columns: 1fr;
         gap: 50px;
@@ -428,8 +428,7 @@
 
 
 
-/* --- Location Map Section --- */
-.location-map {
+ .location-map {
     position: relative;
     padding: 120px 0;
     min-height: 600px;
@@ -437,14 +436,13 @@
     overflow: hidden;
 }
 
-/* 1. The Map Visual & Animations */
-.map-visual {
+ .map-visual {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?q=80&w=1920');
+    background-image: url('./assets/world.webp');
     background-size: cover;
     background-position: center;
     filter: grayscale(100%) brightness(0.2);
@@ -458,8 +456,7 @@
     z-index: 2;
 }
 
-/* Tracking Crosshair Animation */
-.tracking-crosshair {
+ .tracking-crosshair {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -470,29 +467,44 @@
     z-index: 3;
 }
 
-.tracking-crosshair::before, 
+.tracking-crosshair::before,
 .tracking-crosshair::after {
     content: '';
     position: absolute;
     background: var(--primary-color);
 }
 
-/* Crosshair Horizontal Line */
-.tracking-crosshair::before { width: 100%; height: 1px; top: 50%; left: 0; }
-/* Crosshair Vertical Line */
-.tracking-crosshair::after { width: 1px; height: 100%; top: 0; left: 50%; }
+ .tracking-crosshair::before {
+    width: 100%;
+    height: 1px;
+    top: 50%;
+    left: 0;
+}
+
+ .tracking-crosshair::after {
+    width: 1px;
+    height: 100%;
+    top: 0;
+    left: 50%;
+}
 
 .tracking-crosshair {
     animation: crosshairScale 4s ease-in-out infinite alternate;
 }
 
 @keyframes crosshairScale {
-    from { transform: translate(-50%, -50%) scale(0.8); opacity: 0.3; }
-    to { transform: translate(-50%, -50%) scale(1.2); opacity: 0.7; }
+    from {
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 0.3;
+    }
+
+    to {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 0.7;
+    }
 }
 
-/* 2. Floating HQ Card */
-.hq-container {
+ .hq-container {
     position: relative;
     z-index: 10;
 }
@@ -504,7 +516,7 @@
     border: 1px solid var(--road-gray);
     padding: 40px;
     border-radius: var(--radius);
-    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
 }
 
 .card-header {
@@ -528,7 +540,7 @@
 
 .detail-row {
     margin: 20px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     padding-bottom: 10px;
 }
 
@@ -544,8 +556,7 @@
     color: var(--text-header);
 }
 
-/* --- Responsive (768px) --- */
-@media (max-width: 768px) {
+ @media (max-width: 768px) {
     .location-map {
         padding: 80px 0;
         min-height: 500px;
@@ -557,7 +568,9 @@
         text-align: center;
     }
 
-    .card-header { justify-content: center; }
+    .card-header {
+        justify-content: center;
+    }
 
     .tracking-crosshair {
         width: 150px;
@@ -571,8 +584,7 @@
 
 
 
-/* --- Diagnostic Tiers Section --- */
-.diagnostic-tiers {
+ .diagnostic-tiers {
     padding: 100px 0;
     background-color: var(--bg-dark);
     position: relative;
@@ -595,8 +607,7 @@
     transition: var(--transition);
 }
 
-/* 1. The Scanning Line Animation */
-.diag-scanner {
+ .diag-scanner {
     position: absolute;
     top: -100%;
     left: 0;
@@ -615,12 +626,16 @@
 }
 
 @keyframes scanMove {
-    0% { top: -10%; }
-    100% { top: 110%; }
+    0% {
+        top: -10%;
+    }
+
+    100% {
+        top: 110%;
+    }
 }
 
-/* 2. Content Styling */
-.diag-code {
+ .diag-code {
     font-family: 'Courier New', monospace;
     font-size: 0.75rem;
     color: var(--primary-color);
@@ -643,7 +658,7 @@
     font-size: 0.9rem;
     color: var(--text-muted);
     padding: 8px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.03);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
 }
 
 .diag-status {
@@ -659,20 +674,25 @@
 }
 
 @keyframes textPulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.5; }
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
 }
 
-/* 3. Featured Card Styling */
-.featured-diag {
+ .featured-diag {
     border-color: var(--primary-color);
     transform: scale(1.05);
     background: linear-gradient(180deg, #111 0%, #080808 100%);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
 }
 
-/* --- Responsive (768px) --- */
-@media (max-width: 768px) {
+ @media (max-width: 768px) {
     .diag-grid {
         grid-template-columns: 1fr;
         gap: 25px;
@@ -689,8 +709,7 @@
 
 
 
-/* --- Signal CTA Section --- */
-.signal-cta {
+ .signal-cta {
     position: relative;
     padding: 140px 0;
     background-color: #080808;
@@ -698,8 +717,7 @@
     text-align: center;
 }
 
-/* 1. Animated Transmission Waves */
-.signal-waves {
+ .signal-waves {
     position: absolute;
     bottom: -50px;
     left: 50%;
@@ -722,16 +740,27 @@
     animation: signalFlow 4s linear infinite;
 }
 
-.wave-2 { animation-delay: 1.3s; }
-.wave-3 { animation-delay: 2.6s; }
-
-@keyframes signalFlow {
-    0% { transform: translateX(-50%) scale(0.5); opacity: 0.8; }
-    100% { transform: translateX(-50%) scale(4); opacity: 0; }
+.wave-2 {
+    animation-delay: 1.3s;
 }
 
-/* 2. Content Layout */
-.cta-container {
+.wave-3 {
+    animation-delay: 2.6s;
+}
+
+@keyframes signalFlow {
+    0% {
+        transform: translateX(-50%) scale(0.5);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateX(-50%) scale(4);
+        opacity: 0;
+    }
+}
+
+ .cta-container {
     position: relative;
     z-index: 5;
 }
@@ -744,8 +773,7 @@
     line-height: 1.8;
 }
 
-/* 3. The Signal Button */
-.btn-signal {
+ .btn-signal {
     position: relative;
     display: inline-block;
     padding: 20px 50px;
@@ -777,8 +805,7 @@
     height: 300px;
 }
 
-/* --- Responsive (768px) --- */
-@media (max-width: 768px) {
+ @media (max-width: 768px) {
     .signal-cta {
         padding: 100px 0;
     }

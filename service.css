@@ -1,4 +1,3 @@
-/* --- Service Hero Section --- */
 .service-hero {
     position: relative;
     height: 90vh;
@@ -7,17 +6,16 @@
     display: flex;
     align-items: center;
     overflow: hidden;
-    padding-top: 80px; /* Header space */
+    padding-top: 80px;
 }
 
-/* 1. Moving Blueprint Grid Background */
 .hero-grid-bg {
     position: absolute;
     top: 0;
     left: 0;
-    width: 200%; /* Larger for movement */
+    width: 200%;
     height: 200%;
-    background-image: 
+    background-image:
         linear-gradient(rgba(245, 185, 0, 0.05) 1px, transparent 1px),
         linear-gradient(90deg, rgba(245, 185, 0, 0.05) 1px, transparent 1px);
     background-size: 50px 50px;
@@ -27,11 +25,15 @@
 }
 
 @keyframes gridFlow {
-    from { transform: rotateX(60deg) translateY(0); }
-    to { transform: rotateX(60deg) translateY(50px); }
+    from {
+        transform: rotateX(60deg) translateY(0);
+    }
+
+    to {
+        transform: rotateX(60deg) translateY(50px);
+    }
 }
 
-/* 2. Floating Content Box */
 .service-hero-content {
     position: relative;
     z-index: 5;
@@ -42,7 +44,6 @@
     border-radius: var(--radius);
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5);
-    /* Entrance Animation */
     opacity: 0;
     transform: perspective(1000px) rotateY(-10deg) translateX(-50px);
     animation: serviceReveal 1s cubic-bezier(0.2, 1, 0.3, 1) forwards;
@@ -55,7 +56,6 @@
     }
 }
 
-/* --- Hero Details --- */
 .hero-stats-row {
     display: flex;
     gap: 40px;
@@ -82,7 +82,6 @@
     color: var(--text-muted);
 }
 
-/* --- Responsive (768px) --- */
 @media (max-width: 768px) {
     .service-hero {
         height: auto;
@@ -93,13 +92,19 @@
         padding: 40px 25px;
         text-align: center;
         margin: 0 15px;
-        /* Animation stays active but rotation is reduced for small screens */
         animation: serviceRevealMobile 1s cubic-bezier(0.2, 1, 0.3, 1) forwards;
     }
 
     @keyframes serviceRevealMobile {
-        from { opacity: 0; transform: translateY(30px); }
-        to { opacity: 1; transform: translateY(0); }
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 
     .hero-stats-row {
@@ -121,7 +126,6 @@
 
 
 
-/* --- Service Rows --- */
 .service-list-section {
     padding: 100px 0;
     background-color: var(--bg-dark);
@@ -138,7 +142,6 @@
     overflow: hidden;
 }
 
-/* Row Header */
 .row-header {
     display: flex;
     justify-content: space-between;
@@ -181,7 +184,6 @@
     transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* Expandable Content */
 .row-content {
     max-height: 0;
     opacity: 0;
@@ -200,10 +202,9 @@
     border: 1px solid var(--road-gray);
 }
 
-/* --- High-End Animations (Mobile & Desktop) --- */
 .service-row:hover .row-header,
 .service-row.active .row-header {
-    padding-left: 30px; /* Magnetic Nudge */
+    padding-left: 30px;
 }
 
 .service-row.active .row-content {
@@ -220,7 +221,6 @@
     background: linear-gradient(90deg, rgba(245, 185, 0, 0.02) 0%, transparent 100%);
 }
 
-/* --- Responsive (768px) --- */
 @media (max-width: 768px) {
     .row-header {
         flex-direction: column;
@@ -238,7 +238,7 @@
     }
 
     .row-content {
-        grid-template-columns: 1fr; /* Stack text and image */
+        grid-template-columns: 1fr;
     }
 
     .row-img {
@@ -254,7 +254,6 @@
 
 
 
-/* --- Process Section --- */
 .process-section {
     padding: 100px 0;
     background-color: var(--bg-surface);
@@ -269,7 +268,6 @@
     gap: 30px;
 }
 
-/* 1. The Progress Path Line */
 .process-line {
     position: absolute;
     top: 75px;
@@ -289,10 +287,11 @@
 }
 
 @keyframes lineGrow {
-    to { width: 100%; }
+    to {
+        width: 100%;
+    }
 }
 
-/* 2. Step Styling */
 .process-step {
     flex: 1;
     position: relative;
@@ -303,11 +302,21 @@
     animation: revealUp 0.8s cubic-bezier(0.2, 1, 0.3, 1) forwards;
 }
 
-/* Staggered load for steps */
-.process-step:nth-child(2) { animation-delay: 0.3s; }
-.process-step:nth-child(3) { animation-delay: 0.6s; }
-.process-step:nth-child(4) { animation-delay: 0.9s; }
-.process-step:nth-child(5) { animation-delay: 1.2s; }
+.process-step:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.process-step:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.process-step:nth-child(4) {
+    animation-delay: 0.9s;
+}
+
+.process-step:nth-child(5) {
+    animation-delay: 1.2s;
+}
 
 .step-dot {
     width: 50px;
@@ -332,7 +341,6 @@
     transition: var(--transition);
 }
 
-/* --- High-End Hover Animations --- */
 .process-step:hover .step-dot {
     border-color: var(--primary-color);
     background: var(--primary-color);
@@ -346,7 +354,6 @@
     box-shadow: var(--shadow-industrial);
 }
 
-/* --- Responsive (768px) --- */
 @media (max-width: 768px) {
     .process-track {
         flex-direction: column;
@@ -359,11 +366,13 @@
         width: 2px;
         height: 100%;
         top: 0;
-        left: 25px; /* Aligned with dots */
+        left: 25px;
     }
 
     @keyframes lineGrow {
-        to { height: 100%; }
+        to {
+            height: 100%;
+        }
     }
 
     .process-step {
@@ -374,7 +383,7 @@
     }
 
     .step-dot {
-        margin: 0; /* Align left */
+        margin: 0;
         flex-shrink: 0;
     }
 
@@ -390,7 +399,6 @@
 
 
 
-/* --- Service Gallery Section --- */
 .service-gallery {
     padding: 100px 0;
     background-color: var(--bg-dark);
@@ -403,7 +411,6 @@
     gap: 20px;
 }
 
-/* --- Card Styles --- */
 .gallery-card {
     position: relative;
     border-radius: var(--radius);
@@ -414,18 +421,35 @@
     animation: revealIn 0.8s cubic-bezier(0.2, 1, 0.3, 1) forwards;
 }
 
-/* Masonry Spans */
-.tall { grid-row: span 2; }
-.wide { grid-column: span 2; }
+.tall {
+    grid-row: span 2;
+}
 
-/* Staggered load */
-.gallery-card:nth-child(1) { animation-delay: 0.1s; }
-.gallery-card:nth-child(2) { animation-delay: 0.3s; }
-.gallery-card:nth-child(3) { animation-delay: 0.5s; }
-.gallery-card:nth-child(4) { animation-delay: 0.7s; }
+.wide {
+    grid-column: span 2;
+}
+
+.gallery-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.gallery-card:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.gallery-card:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
+.gallery-card:nth-child(4) {
+    animation-delay: 0.7s;
+}
 
 @keyframes revealIn {
-    to { opacity: 1; transform: scale(1); }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .gallery-card img {
@@ -436,7 +460,6 @@
     filter: brightness(0.6) grayscale(30%);
 }
 
-/* --- Hover Effects --- */
 .gallery-card:hover img {
     transform: scale(1.1);
     filter: brightness(1) grayscale(0%);
@@ -466,18 +489,18 @@
     font-size: 0.9rem;
 }
 
-/* --- Responsive (768px) --- */
 @media (max-width: 768px) {
     .masonry-gallery {
-        grid-template-columns: repeat(2, 1fr); /* 2 Column grid on mobile */
+        grid-template-columns: repeat(2, 1fr);
         grid-template-rows: auto;
         gap: 15px;
     }
 
-    .tall, .wide {
+    .tall,
+    .wide {
         grid-row: span 1;
         grid-column: span 1;
-        height: 200px; /* Force consistent size for clean mobile look */
+        height: 200px;
     }
 
     .gallery-overlay {
@@ -494,7 +517,6 @@
 
 
 
-/* --- Booking Section --- */
 .booking-cta {
     padding: 100px 0;
     background-color: var(--bg-surface);
@@ -509,7 +531,6 @@
     align-items: center;
 }
 
-/* 1. Pulse Indicator Animation */
 .status-header {
     display: flex;
     align-items: center;
@@ -525,19 +546,26 @@
 .pulse-indicator {
     width: 10px;
     height: 10px;
-    background-color: #28a745; /* Green for Online */
+    background-color: #28a745;
     border-radius: 50%;
     box-shadow: 0 0 0 rgba(40, 167, 69, 0.4);
     animation: statusPulse 2s infinite;
 }
 
 @keyframes statusPulse {
-    0% { box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7); }
-    70% { box-shadow: 0 0 0 10px rgba(40, 167, 69, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(40, 167, 69, 0); }
+    0% {
+        box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(40, 167, 69, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(40, 167, 69, 0);
+    }
 }
 
-/* 2. Availability Meter Animation */
 .availability-meter {
     margin-top: 30px;
     background: var(--bg-dark);
@@ -552,7 +580,9 @@
     font-weight: 600;
 }
 
-.primary-text { color: var(--primary-color); }
+.primary-text {
+    color: var(--primary-color);
+}
 
 .meter-bar {
     height: 6px;
@@ -571,11 +601,15 @@
 }
 
 @keyframes revMeter {
-    from { transform: scaleX(0); }
-    to { transform: scaleX(1); }
+    from {
+        transform: scaleX(0);
+    }
+
+    to {
+        transform: scaleX(1);
+    }
 }
 
-/* --- Action Cards --- */
 .booking-action-box {
     display: grid;
     grid-template-columns: 1fr;
@@ -602,7 +636,6 @@
     margin-bottom: 15px;
 }
 
-/* --- Responsive (768px) --- */
 @media (max-width: 768px) {
     .booking-container {
         grid-template-columns: 1fr;
@@ -610,16 +643,18 @@
         gap: 50px;
     }
 
-    .status-header { justify-content: center; }
+    .status-header {
+        justify-content: center;
+    }
 
     .action-card {
         text-align: center;
     }
 
     .action-card:hover {
-        transform: translateY(-10px); /* Vertical nudge for mobile */
+        transform: translateY(-10px);
     }
-    
+
     .booking-action-box {
         padding: 0 10px;
     }
@@ -632,7 +667,6 @@
 
 
 
-/* --- Performance Compare Section --- */
 .performance-compare {
     padding: 100px 0;
     background-color: var(--bg-dark);
@@ -647,7 +681,6 @@
     margin: 0 auto;
 }
 
-/* Compare Boxes */
 .compare-box {
     flex: 1;
     background: var(--bg-surface);
@@ -657,8 +690,11 @@
     position: relative;
 }
 
-.compare-box.stock { border-radius: var(--radius) 0 0 var(--radius); }
-.compare-box.tuned { 
+.compare-box.stock {
+    border-radius: var(--radius) 0 0 var(--radius);
+}
+
+.compare-box.tuned {
     border-radius: 0 var(--radius) var(--radius) 0;
     border-left: none;
     background: linear-gradient(145deg, #1a1a1a, #121212);
@@ -680,16 +716,31 @@
     padding-bottom: 5px;
 }
 
-/* Circular Chart Animation */
 .stat-circle {
     position: relative;
     width: 180px;
     height: 180px;
     margin: 0 auto 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.circular-chart { display: block; margin: 10px auto; max-width: 100%; max-height: 250px; }
-.circle-bg { fill: none; stroke: var(--road-gray); stroke-width: 2.8; }
+.circular-chart {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.circle-bg {
+    fill: none;
+    stroke: var(--road-gray);
+    stroke-width: 2.8;
+}
+
 .circle-fill {
     fill: none;
     stroke-width: 2.8;
@@ -703,21 +754,48 @@
     filter: drop-shadow(0 0 5px var(--primary-color));
 }
 
-@keyframes progress { 0% { stroke-dasharray: 0 100; } }
+@keyframes progress {
+    0% {
+        stroke-dasharray: 0 100;
+    }
+}
 
 .percentage {
     position: absolute;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    text-align: center;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 2.5rem;
     font-weight: 900;
     color: var(--text-header);
+    z-index: 2;
 }
 
-.percentage span { font-size: 1rem; margin-left: 2px; color: var(--text-muted); }
+.percentage1 {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    text-align: center;
+    top: 10%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--text-header);
+    z-index: 2;
+}
 
-/* VS Divider */
+.percentage span {
+    font-size: 1rem;
+    margin-left: 2px;
+    color: var(--text-muted);
+}
+
 .vs-divider {
     position: absolute;
     top: 50%;
@@ -740,14 +818,19 @@
     border: 5px solid var(--bg-dark);
 }
 
-/* --- Responsive (768px) --- */
 @media (max-width: 768px) {
     .compare-wrapper {
         flex-direction: column;
     }
 
-    .compare-box.stock { border-radius: var(--radius) var(--radius) 0 0; }
-    .compare-box.tuned { border-radius: 0 0 var(--radius) var(--radius); border-top: none; }
+    .compare-box.stock {
+        border-radius: var(--radius) var(--radius) 0 0;
+    }
+
+    .compare-box.tuned {
+        border-radius: 0 0 var(--radius) var(--radius);
+        border-top: none;
+    }
 
     .vs-divider {
         top: 50%;
@@ -768,7 +851,6 @@
 
 
 
-/* --- Performance CTA Section --- */
 .performance-cta {
     position: relative;
     padding: 120px 0;
@@ -777,7 +859,6 @@
     text-align: center;
 }
 
-/* 1. Animated Background Glow */
 .cta-bg-glow {
     position: absolute;
     top: 50%;
@@ -791,30 +872,39 @@
 }
 
 @keyframes ambientGlow {
-    from { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
-    to { transform: translate(-50%, -50%) scale(1.3); opacity: 0.8; }
+    from {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.5;
+    }
+
+    to {
+        transform: translate(-50%, -50%) scale(1.3);
+        opacity: 0.8;
+    }
 }
 
-/* 2. Moving Industrial Lines */
 .cta-lines {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 40px,
-        rgba(255, 255, 255, 0.02) 41px
-    );
+    background-image: repeating-linear-gradient(0deg,
+            transparent,
+            transparent 40px,
+            rgba(255, 255, 255, 0.02) 41px);
     animation: linesMove 20s linear infinite;
     z-index: 2;
 }
 
 @keyframes linesMove {
-    from { background-position: 0 0; }
-    to { background-position: 0 1000px; }
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 0 1000px;
+    }
 }
 
 .cta-container {
@@ -830,7 +920,6 @@
     line-height: 1.7;
 }
 
-/* --- The Radar Button --- */
 .btn-radar {
     position: relative;
     display: inline-block;
@@ -862,11 +951,17 @@
 }
 
 @keyframes radarPulse {
-    0% { transform: scale(1); opacity: 1; }
-    100% { transform: scale(1.6); opacity: 0; }
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1.6);
+        opacity: 0;
+    }
 }
 
-/* --- Responsive (768px) --- */
 @media (max-width: 768px) {
     .performance-cta {
         padding: 80px 0;
@@ -881,7 +976,6 @@
         padding: 0 20px;
     }
 
-    /* Maintain pulse on mobile */
     .btn-radar {
         padding: 18px 40px;
         width: 90%;
